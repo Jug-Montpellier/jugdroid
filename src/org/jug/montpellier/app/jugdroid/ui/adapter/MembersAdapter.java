@@ -1,12 +1,25 @@
+/**
+ * 
+ */
 package org.jug.montpellier.app.jugdroid.ui.adapter;
 
 import java.util.ArrayList;
 
+import greendroid.image.ImageProcessor;
+import greendroid.widget.AsyncImageView;
+
 import org.jug.montpellier.app.jugdroid.R;
 import org.jug.montpellier.app.jugdroid.models.Speaker;
-import org.taptwo.android.widget.TitleProvider;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,17 +27,57 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 /**
- * This class adapt a model (a list of Speaker) to the widget
- * 
  * @author etaix
+ * 
  */
-public class MembersAdapter extends BaseAdapter implements TitleProvider {
+/**
+ * @author etaix
+ * 
+ */
+public class MembersAdapter extends BaseAdapter implements ImageProcessor {
 
-	private LayoutInflater mInflater;
+	private static final StringBuilder urlBuilder = new StringBuilder();
+	private final Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+	private final Rect mRectSrc = new Rect();
+	private final Rect mRectDest = new Rect();
+
+	// The speakers list
 	private ArrayList<Speaker> speakers;
 
+	static class ViewHolder {
+		public AsyncImageView imageView;
+		public TextView fullnameView;
+		public TextView jobPositionView;
+	}
+
+	private Bitmap mMask;
+	private int mThumbnailSize;
+	private int mThumbnailRadius;
+	private LayoutInflater mInflater;
+
+	/**
+	 * Constructor which initialize the thumbnail tools (paint, mask, ...)
+	 * 
+	 * @param context
+	 */
 	public MembersAdapter(Context context) {
-		mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		mInflater = LayoutInflater.from(context);
+		mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
+		mThumbnailSize = context.getResources().getDimensionPixelSize(R.dimen.thumbnail_size);
+		mThumbnailRadius = context.getResources().getDimensionPixelSize(R.dimen.thumbnail_radius);
+		prepareMask();
+	}
+
+	/**
+	 * Draw the background
+	 */
+	private void prepareMask() {
+		mMask = Bitmap.createBitmap(mThumbnailSize, mThumbnailSize, Bitmap.Config.ARGB_8888);
+		Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+		paint.setColor(Color.RED);
+		paint.setStyle(Paint.Style.FILL_AND_STROKE);
+		Canvas c = new Canvas(mMask);
+		c.drawRoundRect(new RectF(0, 0, mThumbnailSize, mThumbnailSize), mThumbnailRadius, mThumbnailRadius, paint);
 	}
 
 	/**
@@ -38,7 +91,11 @@ public class MembersAdapter extends BaseAdapter implements TitleProvider {
 		notifyDataSetChanged();
 	}
 
-	@Override
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see android.widget.Adapter#getCount()
+	 */
 	public int getCount() {
 		if (speakers != null) {
 			return speakers.size();
@@ -46,36 +103,76 @@ public class MembersAdapter extends BaseAdapter implements TitleProvider {
 		return 0;
 	}
 
-	@Override
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see android.widget.Adapter#getItem(int)
+	 */
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see android.widget.Adapter#getItem(int)
+	 */
 	public Object getItem(int position) {
 		if (speakers != null && position > 0 && position < speakers.size()) {
 			return speakers.get(position);
-		}		 
-		return null;
-	}
-
-	@Override
-	public long getItemId(int position) {
-		return position;
-	}
-
-	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
-		if (convertView == null) {
-			convertView = mInflater.inflate(R.layout.flow_item, null);
 		}
-		((TextView) convertView.findViewById(R.id.userFullName)).setText(speakers.get(position).fullName);
-		return convertView; 
+		return null;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * @see org.taptwo.android.widget.TitleProvider#getTitle(int)
+	 * 
+	 * @see android.widget.Adapter#getItemId(int)
 	 */
-	@Override
-	public String getTitle(int position) {
-		return speakers.get(position).fullName;
+	public long getItemId(int position) {
+		return position;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see android.widget.Adapter#getView(int, android.view.View,
+	 * android.view.ViewGroup)
+	 */
+	public View getView(int position, View convertView, ViewGroup parent) {
+		Speaker speaker = speakers.get(position);
+		if (speaker != null) {
+			ViewHolder holder;
+			if (convertView == null) {
+				convertView = mInflater.inflate(R.layout.image_item2_view, parent, false);
+				holder = new ViewHolder();
+				holder.imageView = (AsyncImageView) convertView.findViewById(R.id.async_image);
+				holder.imageView.setImageProcessor(this);
+				holder.fullnameView = (TextView) convertView.findViewById(R.id.fullname);
+				holder.jobPositionView = (TextView) convertView.findViewById(R.id.jobposition);
+				convertView.setTag(holder);
+			}
+			else {
+				holder = (ViewHolder) convertView.getTag();
+			}
 
+			// Set the image URL which will be loaded
+			urlBuilder.setLength(0);
+			holder.imageView.setUrl(urlBuilder.toString());
+			// Set the fullname
+			holder.fullnameView.setText(speaker.fullName);
+			// Set the job position
+			holder.jobPositionView.setText(speaker.activity + " - " + speaker.company);
+
+			return convertView;
+		}
+		return null;
+	}
+
+	public Bitmap processImage(Bitmap bitmap) {
+		Bitmap result = Bitmap.createBitmap(mThumbnailSize, mThumbnailSize, Bitmap.Config.ARGB_8888);
+		Canvas c = new Canvas(result);
+
+		mRectSrc.set(0, 0, bitmap.getWidth(), bitmap.getHeight());
+		mRectDest.set(0, 0, mThumbnailSize, mThumbnailSize);
+		c.drawBitmap(bitmap, mRectSrc, mRectDest, null);
+		c.drawBitmap(mMask, 0, 0, mPaint);
+		return result;
+	}
 }

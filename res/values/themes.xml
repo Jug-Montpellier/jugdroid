@@ -21,7 +21,7 @@
 
 	<style name="Theme.JugDroid" parent="@style/Theme.GreenDroid.NoTitleBar">
 	
-		<item name="gdActionBarTitleColor">#4a738c</item>
+		<item name="gdActionBarTitleColor">@android:color/white</item>
 		<item name="gdActionBarBackground">@drawable/action_bar_background</item>
 		<item name="gdActionBarDividerDrawable">@drawable/action_bar_divider</item>
 		<item name="gdActionBarDividerWidth">2px</item>
