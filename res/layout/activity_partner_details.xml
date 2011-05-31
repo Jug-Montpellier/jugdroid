@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:jugdroid="http://schemas.android.com/apk/res/org.jug.montpellier.app.jugdroid"
+	android:layout_width="fill_parent" android:orientation="vertical"
+	android:layout_height="wrap_content">
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:orientation="horizontal"
+		android:padding="8dp">
+
+		<greendroid.widget.AsyncImageView
+			android:id="@+id/async_image" jugdroid:defaultSrc="@drawable/user" android:layout_height="@dimen/thumbnail_detail_size" android:layout_width="@dimen/thumbnail_detail_size" android:scaleType="fitXY"/>
+
+		<LinearLayout android:layout_width="fill_parent"
+			android:orientation="vertical" android:layout_height="wrap_content">
+			<TextView android:paddingLeft="10dp" android:gravity="center_vertical|left"
+				android:layout_height="wrap_content" android:layout_width="fill_parent"
+				android:textAppearance="?android:attr/textAppearanceLarge" android:id="@+id/name" android:text="My SSII"/>
+			<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="10dip" android:autoLink="web" android:textAppearance="?android:attr/textAppearanceMedium" android:id="@+id/url" android:text="www.my-ssii.biz"></TextView>
+		</LinearLayout>
+
+	</LinearLayout>
+	<TextView android:layout_height="wrap_content" android:layout_width="fill_parent" android:paddingLeft="10dip" android:paddingTop="20dip" android:autoLink="web|email" android:id="@+id/description" android:textAppearance="?android:attr/textAppearanceSmall" android:text="MySSII est une SSII de nouvelle génération, pleine de chaleur de d'enthousiasme pour ces collaborateurs. Nous disposons d'une crêche familiale et d'un coin repas près d'une cheminée datant du 18ème siècle auprès de laquelle vous pouvez deguster un bon café accompagné d'un digestif. En cas de sommeil des lits sont à votre disposition. Envie de rejoindre une équipe motivée et de buller un peu: N'hésitez pas contacter nous : labonneplanque@myssii.biz"></TextView>
+</LinearLayout>

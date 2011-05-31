@@ -16,6 +16,8 @@
         </activity>
         <activity android:name=".ui.MembersActivity_" android:label="@string/speakers"></activity>
         <activity android:name=".ui.MemberDetailActivity_" android:label="@string/speaker_details"></activity>
+        <activity android:name=".ui.PartnersActivity_" android:label="@string/partners"></activity>
+        <activity android:name=".ui.PartnerDetailActivity_" android:label="@string/partners_details"></activity>
 </application>
 </manifest>
 

@@ -5,6 +5,7 @@ package org.jug.montpellier.app.jugdroid.models;
 
 import java.io.Serializable;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 /**
@@ -12,6 +13,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
  * @author etaix
  */
 @SuppressWarnings("serial")
+@JsonIgnoreProperties(ignoreUnknown=true)
 public class Speaker implements Serializable {
 
 	// Job position

@@ -90,6 +90,7 @@ public class DashboardActivity extends GDActivity {
 
 	@Click(R.id.home_btn_partners)
 	void partnersClicked() { 
+		startActivity(new Intent(this, PartnersActivity_.class));
 	}
 	
 	@Click(R.id.home_btn_members)

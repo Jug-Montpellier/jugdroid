@@ -12,67 +12,84 @@ import org.codehaus.jackson.type.TypeReference;
 import org.json.JSONException;
 import org.jug.montpellier.app.jugdroid.R;
 import org.jug.montpellier.app.jugdroid.core.RestClient;
-import org.jug.montpellier.app.jugdroid.models.Speaker;
-import org.jug.montpellier.app.jugdroid.ui.adapter.MembersAdapter;
+import org.jug.montpellier.app.jugdroid.models.Partner;
+import org.jug.montpellier.app.jugdroid.ui.adapter.PartnersAdapter;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
+import android.widget.AdapterView.OnItemClickListener;
 
 import com.googlecode.androidannotations.annotations.Background;
+import com.googlecode.androidannotations.annotations.BeforeCreate;
 import com.googlecode.androidannotations.annotations.EActivity;
 import com.googlecode.androidannotations.annotations.UiThread;
+import com.googlecode.androidannotations.annotations.ViewById;
 
 /**
- * Shows the members list
+ * Shows the partners list
  * 
  * @author etaix
  */
-@EActivity
-public class MembersActivity extends JugListActivity {
+@EActivity 
+public class PartnersActivity extends JugActivity implements OnItemClickListener {
 
-	// Members adapter
-	private MembersAdapter adapter;
+	@ViewById(R.id.list)
+	ListView listView;
+	
+	// Partners adapter
+	private PartnersAdapter adapter;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		adapter = new MembersAdapter(this); 
-		setListAdapter(adapter);
+		adapter = new PartnersAdapter(this); 
+		listView.setAdapter(adapter);
+		listView.setOnItemClickListener(this);
 		// Update members list
 		setLoading(true);
-		updateMembers();
+		updatePartners();
 	}
 
 	/**
-	 * The user has clicked on a member to see details
+	 * Set the content view as we can't set it using EActivity annotation
+	 * because GreenDroid doesn't use the conventionnal #setContentView method
 	 */
-    @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-        final Speaker speaker = (Speaker) adapter.getItem(position);
-        Intent intent = new Intent(this, MemberDetailActivity_.class);
-        intent.putExtra(MemberDetailActivity.SPEAKER_EXTRA, speaker);
+	@BeforeCreate
+	public void onBeforeCreate() {
+		setActionBarContentView(R.layout.partners_list);
+	}
+		
+	/* (non-Javadoc)
+	 * @see android.widget.AdapterView.OnItemClickListener#onItemClick(android.widget.AdapterView, android.view.View, int, long)
+	 */
+	@Override
+	public void onItemClick(AdapterView<?> l, View v, int position, long id) {
+        final Partner partner = (Partner) adapter.getItem(position);
+        Intent intent = new Intent(this, PartnerDetailActivity_.class);
+        intent.putExtra(PartnerDetailActivity.PARTNER_EXTRA, partner);
         startActivity(intent);
-    }
-	
+	}
+
 	/**
-	 * Get JUG members list
+	 * Get partners list
 	 */
 	@Background
-	void updateMembers() {
-		ArrayList<Speaker> speakers = null;
+	void updatePartners() {
+		ArrayList<Partner> partners = null;
 		// Call the REST service
 		try {
-			String jsonStr = RestClient.send("http://192.168.2.13:9000/api/members.json");
+			String jsonStr = RestClient.send("http://192.168.2.13:9000/api/partners/currentyear.json");
 			if (jsonStr != null) {
 				JsonFactory jsonFactory = new JsonFactory();
 				JsonParser jp = jsonFactory.createJsonParser(jsonStr);
 				ObjectMapper objectMapper = new ObjectMapper();
 				// Parse response
-				speakers = objectMapper.readValue(jp, new TypeReference<ArrayList<Speaker>>() {
+				partners = objectMapper.readValue(jp, new TypeReference<ArrayList<Partner>>() {
 				});
 			}
 		}
@@ -85,7 +102,7 @@ public class MembersActivity extends JugListActivity {
 			toastMessage((String) getText(R.string.error_getting_information), Toast.LENGTH_LONG);
 		}
 		finally {
-			updateMembersUI(speakers);
+			updatePartnersUI(partners);
 		}
 
 	}
@@ -98,7 +115,7 @@ public class MembersActivity extends JugListActivity {
 	@Override
 	public void refresh() {
 		setLoading(true);
-		updateMembers();
+		updatePartners();
 	}
 
 	/**
@@ -107,8 +124,8 @@ public class MembersActivity extends JugListActivity {
 	 */
 	@SuppressWarnings("unchecked")
 	@UiThread
-	void updateMembersUI(ArrayList speakers) {
-		adapter.setMembers(speakers);
+	void updatePartnersUI(ArrayList partners) {
+		adapter.setPartners(partners);
 		setLoading(false);
 	}
 }
