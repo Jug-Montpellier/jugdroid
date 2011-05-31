@@ -26,8 +26,8 @@
 					android:text="Partenaires" android:drawableTop="@drawable/home_btn_partners"
 					android:layout_weight="1" />
 				<org.jug.montpellier.app.jugdroid.widget.NewInfoButton android:id="@+id/home_btn_members" style="@style/DashboardButton"
-					android:text="Membres" android:drawableTop="@drawable/home_btn_members"
-					android:layout_weight="1" />
+					android:drawableTop="@drawable/home_btn_members"
+					android:layout_weight="1" android:text="@string/speakers"/>
 			</LinearLayout>
 			<LinearLayout android:orientation="horizontal"
 				android:layout_width="fill_parent" android:layout_height="wrap_content"

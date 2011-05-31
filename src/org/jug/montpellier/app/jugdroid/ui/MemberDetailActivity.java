@@ -3,9 +3,8 @@
  */
 package org.jug.montpellier.app.jugdroid.ui;
 
-import java.text.MessageFormat;
-
 import greendroid.app.GDActivity;
+import greendroid.widget.AsyncImageView;
 
 import org.jug.montpellier.app.jugdroid.R;
 import org.jug.montpellier.app.jugdroid.models.Speaker;
@@ -33,10 +32,16 @@ public class MemberDetailActivity extends GDActivity {
 	TextView fullNameView;
 	@ViewById(R.id.jobposition)
 	TextView jobPositionView;
+	@ViewById(R.id.company)
+	TextView compagnyView;
+	@ViewById(R.id.companyURL)
+	TextView companyURLView;
 	@ViewById(R.id.description)
 	TextView descView;
 	@ViewById(R.id.personalURL)
 	TextView personalView;
+	@ViewById(R.id.async_image)
+	AsyncImageView imageView;
 
 	// The speaker to display details from
 	@Extra(SPEAKER_EXTRA)
@@ -48,15 +53,15 @@ public class MemberDetailActivity extends GDActivity {
 		if (speaker != null) {
 			// Set fullname, job position, company
 			fullNameView.setText(speaker.fullName);
-			String compURL = speaker.companyURL;
-			if (compURL != null && compURL.trim().length() > 0) {
-				compURL = "(" + compURL + ")";
-			}
-			String jobAtCompany = MessageFormat.format((String) getText(R.string.job_at_company), new Object[] {
-					speaker.activity, speaker.company, compURL });
-			jobPositionView.setText(jobAtCompany);
+			jobPositionView.setText(speaker.activity);
+			compagnyView.setText(speaker.company);
+			companyURLView.setText(speaker.companyURL);
 			descView.setText(speaker.description);
 			personalView.setText(speaker.personalURL);
+			// Set the image URL which will ne download in the background
+			if (speaker.image != null && speaker.image.length() > 0) {
+				imageView.setUrl(speaker.image);
+			}
 		}
 	}
 

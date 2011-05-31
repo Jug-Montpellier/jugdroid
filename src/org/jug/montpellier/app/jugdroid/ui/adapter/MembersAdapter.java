@@ -34,7 +34,6 @@ import android.widget.TextView;
  */
 public class MembersAdapter extends BaseAdapter implements ImageProcessor {
 
-	private static final StringBuilder urlBuilder = new StringBuilder();
 	private final Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 	private final Rect mRectSrc = new Rect();
 	private final Rect mRectDest = new Rect();
@@ -151,13 +150,14 @@ public class MembersAdapter extends BaseAdapter implements ImageProcessor {
 			}
 
 			// Set the image URL which will be loaded
-			urlBuilder.setLength(0);
-			holder.imageView.setUrl(urlBuilder.toString());
+			if (speaker.image != null && speaker.image.length() > 0) {
+				holder.imageView.setUrl(speaker.image);
+			}
+			holder.imageView.setPaused(false);
 			// Set the fullname
 			holder.fullnameView.setText(speaker.fullName);
 			// Set the job position
 			holder.jobPositionView.setText(speaker.activity + " - " + speaker.company);
-
 			return convertView;
 		}
 		return null;

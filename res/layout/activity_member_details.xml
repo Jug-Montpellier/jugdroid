@@ -23,5 +23,7 @@
 		android:paddingLeft="10dip" android:layout_width="fill_parent"
 		android:id="@+id/jobposition" android:gravity="center_vertical|left"
 		android:text="Responsable RD" android:autoLink="web|email" android:textAppearance="?android:attr/textAppearanceMedium" android:paddingTop="20dip"></TextView>
+	<TextView android:layout_height="wrap_content" android:layout_width="fill_parent" android:paddingLeft="10dip" android:textAppearance="?android:attr/textAppearanceMedium" android:text="ESII Média Accueil" android:id="@+id/company"></TextView>
+	<TextView android:layout_height="wrap_content" android:layout_width="fill_parent" android:paddingLeft="10dip" android:autoLink="web" android:textAppearance="?android:attr/textAppearanceMedium" android:text="www.esii.com" android:id="@+id/companyURL"></TextView>
 	<TextView android:layout_height="wrap_content" android:layout_width="fill_parent" android:paddingLeft="10dip" android:paddingTop="20dip" android:autoLink="web|email" android:text="Eric est responsable R&amp;D, passionné des technologies Java et Android entousiaste. Il croit fermement dans la communauté Java et dans le partage du savoir. Il participe régulièrement à des projets open-source du monde java et android. Ses publication sur www.cnrs-java.org sont régulièrement primé au FMI. Vous pouvez le joindre sur question-java@labonnereponse.com" android:id="@+id/description" android:textAppearance="?android:attr/textAppearanceSmall"></TextView>
 </LinearLayout>

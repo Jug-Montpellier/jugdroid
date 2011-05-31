@@ -44,5 +44,6 @@ public class Speaker implements Serializable {
 	// Description / Bio
 	@JsonProperty(value="description")
 	public String description;
+	public String image = "http://192.168.2.13:9000/public/images/logo.png";
 	
 }

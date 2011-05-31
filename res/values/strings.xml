@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Jug Montpellier</string>    
     <string name="crash_toast_text">Ooooops ! I crashed, but a report has been sent to my developer to help him fix the issue !</string>
-    <string name="members">Speakers</string>    
-    <string name="member_details">Speaker details</string>   
+    <string name="speakers">Speakers</string>    
+    <string name="speaker_details">Speaker details</string>   
     <string name="job_at_company">{0} at {1} {2}</string> 
 </resources>

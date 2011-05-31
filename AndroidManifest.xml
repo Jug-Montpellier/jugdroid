@@ -14,8 +14,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.MembersActivity_" android:label="@string/members"></activity>
-        <activity android:name=".ui.MemberDetailActivity_" android:label="@string/member_details"></activity>
+        <activity android:name=".ui.MembersActivity_" android:label="@string/speakers"></activity>
+        <activity android:name=".ui.MemberDetailActivity_" android:label="@string/speaker_details"></activity>
 </application>
 </manifest>
 
