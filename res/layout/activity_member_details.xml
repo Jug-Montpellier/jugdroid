@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:jugdroid="http://schemas.android.com/apk/res/org.jug.montpellier.app.jugdroid"
+	android:layout_width="fill_parent" android:orientation="vertical"
+	android:layout_height="wrap_content">
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:orientation="horizontal"
+		android:padding="8dp">
+
+		<greendroid.widget.AsyncImageView
+			android:id="@+id/async_image" jugdroid:defaultSrc="@drawable/user" android:layout_height="@dimen/thumbnail_detail_size" android:layout_width="@dimen/thumbnail_detail_size" android:scaleType="fitXY"/>
+
+		<LinearLayout android:layout_width="fill_parent"
+			android:orientation="vertical" android:layout_height="wrap_content">
+			<TextView android:paddingLeft="10dp" android:gravity="center_vertical|left"
+				android:layout_height="wrap_content" android:layout_width="fill_parent"
+				android:id="@+id/fullname" android:textAppearance="?android:attr/textAppearanceLarge" android:text="Christophe Chamerling"/>
+			<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingLeft="10dip" android:id="@+id/personalURL" android:text="github.com/eric-taix" android:autoLink="web" android:textAppearance="?android:attr/textAppearanceMedium"></TextView>
+		</LinearLayout>
+
+	</LinearLayout>
+	<TextView android:layout_height="wrap_content"
+		android:paddingLeft="10dip" android:layout_width="fill_parent"
+		android:id="@+id/jobposition" android:gravity="center_vertical|left"
+		android:text="Responsable RD" android:autoLink="web|email" android:textAppearance="?android:attr/textAppearanceMedium" android:paddingTop="20dip"></TextView>
+	<TextView android:layout_height="wrap_content" android:layout_width="fill_parent" android:paddingLeft="10dip" android:paddingTop="20dip" android:autoLink="web|email" android:text="Eric est responsable R&amp;D, passionné des technologies Java et Android entousiaste. Il croit fermement dans la communauté Java et dans le partage du savoir. Il participe régulièrement à des projets open-source du monde java et android. Ses publication sur www.cnrs-java.org sont régulièrement primé au FMI. Vous pouvez le joindre sur question-java@labonnereponse.com" android:id="@+id/description" android:textAppearance="?android:attr/textAppearanceSmall"></TextView>
+</LinearLayout>

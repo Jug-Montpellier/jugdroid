@@ -3,13 +3,16 @@
  */
 package org.jug.montpellier.app.jugdroid.models;
 
+import java.io.Serializable;
+
 import org.codehaus.jackson.annotate.JsonProperty;
 
 /**
  * Define a speaker or a JUG member
  * @author etaix
  */
-public class Speaker {
+@SuppressWarnings("serial")
+public class Speaker implements Serializable {
 
 	// Job position
 	@JsonProperty(value="activity")

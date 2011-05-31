@@ -27,12 +27,10 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 /**
- * @author etaix
+ * The members adapter. This adapter uses the viewHolder pattern and also uses
+ * an AsyncImageView to display a member's image.
  * 
- */
-/**
  * @author etaix
- * 
  */
 public class MembersAdapter extends BaseAdapter implements ImageProcessor {
 
@@ -114,7 +112,7 @@ public class MembersAdapter extends BaseAdapter implements ImageProcessor {
 	 * @see android.widget.Adapter#getItem(int)
 	 */
 	public Object getItem(int position) {
-		if (speakers != null && position > 0 && position < speakers.size()) {
+		if (speakers != null && position >= 0 && position < speakers.size()) {
 			return speakers.get(position);
 		}
 		return null;
@@ -165,6 +163,9 @@ public class MembersAdapter extends BaseAdapter implements ImageProcessor {
 		return null;
 	}
 
+	/**
+	 * Process and display an image white it has beeen loaded
+	 */
 	public Bitmap processImage(Bitmap bitmap) {
 		Bitmap result = Bitmap.createBitmap(mThumbnailSize, mThumbnailSize, Bitmap.Config.ARGB_8888);
 		Canvas c = new Canvas(result);

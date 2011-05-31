@@ -14,8 +14,11 @@ import org.jug.montpellier.app.jugdroid.core.RestClient;
 import org.jug.montpellier.app.jugdroid.models.Speaker;
 import org.jug.montpellier.app.jugdroid.ui.adapter.MembersAdapter;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.googlecode.androidannotations.annotations.Background;
@@ -43,6 +46,17 @@ public class MembersActivity extends JugListActivity {
 		updateMembers();
 	}
 
+	/**
+	 * The user has clicked on a member to see details
+	 */
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        final Speaker speaker = (Speaker) adapter.getItem(position);
+        Intent intent = new Intent(this, MemberDetailActivity_.class);
+        intent.putExtra(MemberDetailActivity.SPEAKER_EXTRA, speaker);
+        startActivity(intent);
+    }
+	
 	/**
 	 * Get JUG members list
 	 */

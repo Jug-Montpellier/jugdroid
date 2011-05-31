@@ -15,6 +15,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.MembersActivity_" android:label="@string/members"></activity>
+        <activity android:name=".ui.MemberDetailActivity_" android:label="@string/member_details"></activity>
 </application>
 </manifest>
 
