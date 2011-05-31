@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   id="svg3746"
+   version="1.1"
+   inkscape:version="0.48.0 r9654"
+   sodipodi:docname="Nouveau document 3">
+  <defs
+     id="defs3748">
+    <filter
+       inkscape:collect="always"
+       x="-0.068984278"
+       width="1.1379687"
+       y="-0.46070004"
+       height="1.9214001"
+       id="filter3330-1"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="7.5440031"
+         id="feGaussianBlur3332-7" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       x="-0.068984278"
+       width="1.1379687"
+       y="-0.46070004"
+       height="1.9214001"
+       id="filter3330"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="7.5440031"
+         id="feGaussianBlur3332" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       id="filter3618"
+       x="-0.21280976"
+       width="1.4256195"
+       y="-0.54621172"
+       height="2.0924234"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="7.5954327"
+         id="feGaussianBlur3620" />
+    </filter>
+    <linearGradient
+       id="linearGradient3238"
+       inkscape:collect="always">
+      <stop
+         id="stop3240"
+         offset="0"
+         style="stop-color:#000000;stop-opacity:1" />
+      <stop
+         id="stop3242"
+         offset="1"
+         style="stop-color:#ffffff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3260">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop3262" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="1"
+         id="stop3264" />
+    </linearGradient>
+    <filter
+       inkscape:collect="always"
+       x="-0.068984278"
+       width="1.1379687"
+       y="-0.46070004"
+       height="1.9214001"
+       id="filter3330-9-8"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="7.5440031"
+         id="feGaussianBlur3332-0-3" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       x="-0.096922599"
+       width="1.1938452"
+       y="-0.15034319"
+       height="1.3006864"
+       id="filter3244"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="7.1433338"
+         id="feGaussianBlur3246" />
+    </filter>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3146"
+       id="radialGradient5170"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(2.0356417,0,0,1.1515229,-357.49763,-68.359395)"
+       cx="345.19434"
+       cy="451.14899"
+       fx="345.19434"
+       fy="451.14899"
+       r="80" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3146">
+      <stop
+         style="stop-color:#fd0000;stop-opacity:1;"
+         offset="0"
+         id="stop3148" />
+      <stop
+         style="stop-color:#820000;stop-opacity:1"
+         offset="1"
+         id="stop3150" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3156"
+       id="linearGradient5172"
+       gradientUnits="userSpaceOnUse"
+       x1="306.07623"
+       y1="400.81378"
+       x2="306.5813"
+       y2="475.56509" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3156">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop3158" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="1"
+         id="stop3160" />
+    </linearGradient>
+    <filter
+       height="1.0750866"
+       y="-0.037543289"
+       width="1.3775032"
+       x="-0.18875162"
+       id="filter4232"
+       inkscape:collect="always"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur4234"
+         stdDeviation="3.7049733"
+         inkscape:collect="always" />
+    </filter>
+    <filter
+       height="1.3151572"
+       y="-0.15757859"
+       width="1.0731202"
+       x="-0.036560088"
+       id="filter4244"
+       inkscape:collect="always"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur4246"
+         stdDeviation="3.7049733"
+         inkscape:collect="always" />
+    </filter>
+    <filter
+       height="1.3337467"
+       y="-0.16687334"
+       width="1.1829104"
+       x="-0.091455236"
+       id="filter4252"
+       inkscape:collect="always"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur4254"
+         stdDeviation="3.7049733"
+         inkscape:collect="always" />
+    </filter>
+    <filter
+       height="1.7572103"
+       y="-0.37860516"
+       width="1.2971331"
+       x="-0.14856653"
+       id="filter4236"
+       inkscape:collect="always"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur4238"
+         stdDeviation="3.7049733"
+         inkscape:collect="always" />
+    </filter>
+    <filter
+       height="1.6466862"
+       y="-0.32334313"
+       width="1.1948917"
+       x="-0.097445875"
+       id="filter4248"
+       inkscape:collect="always"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur4250"
+         stdDeviation="3.7049733"
+         inkscape:collect="always" />
+    </filter>
+    <filter
+       height="1.3860065"
+       y="-0.19300325"
+       width="1.4348896"
+       x="-0.21744476"
+       id="filter4240"
+       inkscape:collect="always"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur4242"
+         stdDeviation="3.7049733"
+         inkscape:collect="always" />
+    </filter>
+    <filter
+       id="filter4264"
+       inkscape:collect="always"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur4266"
+         stdDeviation="3.7049733"
+         inkscape:collect="always" />
+    </filter>
+    <filter
+       height="1.1398731"
+       y="-0.069936581"
+       width="1.2074785"
+       x="-0.10373926"
+       id="filter4272"
+       inkscape:collect="always"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur4274"
+         stdDeviation="3.7049733"
+         inkscape:collect="always" />
+    </filter>
+    <filter
+       height="1.2232952"
+       y="-0.11164762"
+       width="1.2263402"
+       x="-0.11317009"
+       id="filter4268"
+       inkscape:collect="always"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur4270"
+         stdDeviation="3.7049733"
+         inkscape:collect="always" />
+    </filter>
+    <filter
+       height="1.3353359"
+       y="-0.16766796"
+       width="1.2355202"
+       x="-0.1177601"
+       id="filter4260"
+       inkscape:collect="always"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur4262"
+         stdDeviation="3.7049733"
+         inkscape:collect="always" />
+    </filter>
+    <filter
+       height="1.1778296"
+       y="-0.088914827"
+       width="1.3786051"
+       x="-0.18930253"
+       id="filter4280"
+       inkscape:collect="always"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur4282"
+         stdDeviation="3.7049733"
+         inkscape:collect="always" />
+    </filter>
+    <filter
+       height="1.2479596"
+       y="-0.12397982"
+       width="1.7654406"
+       x="-0.38272029"
+       id="filter4276"
+       inkscape:collect="always"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur4278"
+         stdDeviation="3.7049733"
+         inkscape:collect="always" />
+    </filter>
+    <filter
+       height="1.4047158"
+       y="-0.2023579"
+       width="1.3786051"
+       x="-0.18930253"
+       id="filter4256"
+       inkscape:collect="always"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur4258"
+         stdDeviation="3.7049733"
+         inkscape:collect="always" />
+    </filter>
+    <filter
+       height="1.0815394"
+       y="-0.040769715"
+       width="1.6154286"
+       x="-0.30771431"
+       id="filter4310"
+       inkscape:collect="always"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur4312"
+         stdDeviation="1.9232144"
+         inkscape:collect="always" />
+    </filter>
+    <filter
+       height="1.1120696"
+       y="-0.056034785"
+       width="1.201375"
+       x="-0.10068749"
+       id="filter4336"
+       inkscape:collect="always"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         id="feGaussianBlur4338"
+         stdDeviation="0.9589284"
+         inkscape:collect="always" />
+    </filter>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3238"
+       id="linearGradient4938"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(-0.40678807,-0.14363853,-0.13835347,0.42232723,565.86221,382.12217)"
+       x1="217.2552"
+       y1="471.90912"
+       x2="381.93088"
+       y2="416.91608" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3260"
+       id="linearGradient4941"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.42401912,-0.07212328,0.06946956,0.44021649,111.19502,259.11221)"
+       x1="390.92905"
+       y1="339.69485"
+       x2="390.92905"
+       y2="421.01685" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3238"
+       id="linearGradient4944"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.40678807,-0.14363853,0.13835347,0.42232723,61.924241,383.47402)"
+       x1="217.2552"
+       y1="471.90912"
+       x2="381.93088"
+       y2="416.91608" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="323.43952"
+     inkscape:cy="646.87109"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1157"
+     inkscape:window-height="738"
+     inkscape:window-x="175"
+     inkscape:window-y="175"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata3751">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g4958"
+       inkscape:export-filename="D:\projects\open-source\jugdroid\res\drawable-hdpi\user.png"
+       inkscape:export-xdpi="35.20845"
+       inkscape:export-ydpi="35.20845">
+      <path
+         inkscape:connector-curvature="0"
+         inkscape:export-ydpi="72.455208"
+         inkscape:export-xdpi="72.455208"
+         inkscape:export-filename="/home/silveira/Área de Trabalho/Duke_Luau.png"
+         transform="matrix(0.42967227,0,0,0.6408668,163.95567,104.76212)"
+         sodipodi:nodetypes="cszzz"
+         id="path3276"
+         d="m 479.31994,645.64708 c -15.3436,-27.87164 -70.84586,-6.42392 -132.28825,-7.28591 -52.23685,-0.73284 -110.73235,-28.93671 -127.32095,8.29606 -16.42559,36.86689 110.04235,11.8355 130.30967,11.11167 21.2132,-0.75761 145.07164,16.52821 129.29953,-12.12182 z"
+         style="opacity:0.5;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;filter:url(#filter3330)" />
+      <path
+         inkscape:export-ydpi="72.455208"
+         inkscape:export-xdpi="72.455208"
+         inkscape:export-filename="/home/silveira/Área de Trabalho/Duke_Luau.png"
+         transform="matrix(0.36899932,0,0,0.3547907,235.32049,269.23024)"
+         d="m 122.36979,718.6264 a 42.829426,16.686789 0 1 1 -85.658856,0 42.829426,16.686789 0 1 1 85.658856,0 z"
+         sodipodi:ry="16.686789"
+         sodipodi:rx="42.829426"
+         sodipodi:cy="718.6264"
+         sodipodi:cx="79.540359"
+         id="path3548"
+         style="opacity:0.38127088;fill:#000000;fill-opacity:1;stroke:none;filter:url(#filter3618)"
+         sodipodi:type="arc" />
+      <g
+         style="fill:#395261;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:2.02537257;stroke-miterlimit:4;stroke-dasharray:none"
+         transform="matrix(-0.41929112,-0.5476609,0.49495123,-0.46394339,170.16404,576.42105)"
+         id="g3918">
+        <g
+           style="fill:#395261;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:2.02537257;stroke-miterlimit:4;stroke-dasharray:none"
+           id="g3866"
+           transform="translate(-535.25274,-52.518078)">
+          <path
+             sodipodi:nodetypes="csssssssssssssssss"
+             id="path5487"
+             d="m 541.52264,251.55749 c 0.039,-2.56297 2.13099,-5.21307 3.68816,-7.24913 1.4246,-1.86272 3.07519,-3.05588 4.95992,-4.45122 1.19006,-0.88105 3.03882,-1.71751 4.45123,-2.16202 1.23714,-0.38935 2.3975,-0.25373 3.68815,-0.38153 1.18122,-0.11696 2.37486,-0.0455 3.56098,0 2.2093,0.0848 4.41348,0.28675 6.61324,0.50871 1.36021,0.13725 3.05692,-0.40962 4.06968,0.50871 1.9961,1.80997 3.9142,9.53054 1.7805,7.88502 -3.19823,-2.46649 -2.95743,-3.11133 -4.83276,-4.06969 -1.86772,-0.95447 -4.02278,-1.26985 -6.10453,-1.52613 -2.44035,-0.30042 -5.0017,-0.6378 -7.37631,0 -1.7977,0.48285 -3.48303,1.51607 -4.83275,2.79791 -1.46648,1.39273 -2.39874,3.27989 -3.30662,5.0871 -1.09585,2.18137 -1.94361,4.5013 -2.54355,6.8676 -0.29467,1.16227 -0.0776,4.21636 -1.27179,4.32404 -1.60218,0.14447 -0.0717,-3.88892 -0.76306,-5.34146 -0.4751,-0.99816 -1.79732,-1.69257 -1.78049,-2.79791 z"
+             style="fill:#395261;stroke:#000000;stroke-width:2.02537257;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+             inkscape:connector-curvature="0" />
+          <path
+             sodipodi:nodetypes="ccccccccccc"
+             id="path5082-3"
+             style="color:#000000;fill:#395261;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2.02537257;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+             d="m 574.119,247.07742 c 3.24353,2.56892 4.21207,6.37803 10.3177,7.41493 -0.12579,-0.99732 -0.83867,-1.99464 -1.18462,-2.55425 3.03177,1.75707 5.25628,2.63871 8.65498,3.44738 -0.47593,-1.04422 -1.39219,-1.86958 -1.94151,-2.54905 2.41325,1.12868 6.4063,1.56324 9.25988,1.15992 -0.63632,-0.66177 -1.27264,-1.32353 -1.90895,-1.83939 2.52962,0.0167 4.91248,-0.18548 7.36873,-0.4606 -0.64892,-0.73472 -1.29783,-1.46944 -2.1669,-2.05825 1.87652,-0.36059 3.43432,-1.21718 5.09068,-2.16141 -3.99802,-9.35141 -25.68554,-16.55791 -35.20747,-9.46341"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+      <path
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cscs"
+         id="path5082-5"
+         style="color:#000000;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.40040198;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         d="m 331.14308,393.95532 c -0.71437,-2.26744 1.62258,-2.65246 3.82815,-4.45594 2.33563,-1.90984 16.42514,-16.52782 1.61863,-23.48119 2.61122,5.70081 6.26267,14.41747 -12.07011,19.21176" />
+      <path
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="csscs"
+         id="path5082-5-0"
+         style="color:#000000;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.40040198;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+         d="m 301.46198,389.76944 c 0.17801,-1.18321 -0.66256,5.7003 -1.50064,3.97144 -0.95493,-1.96986 -3.65815,-2.72329 -4.88286,-3.41559 -2.59388,-1.46625 -19.35752,-12.52781 -5.83703,-22.04797 -1.69819,6.09589 -3.02828,16.54413 15.76781,17.98781" />
+      <path
+         inkscape:connector-curvature="0"
+         inkscape:export-ydpi="72.455208"
+         inkscape:export-xdpi="72.455208"
+         inkscape:export-filename="/home/silveira/Área de Trabalho/Duke_Luau.png"
+         sodipodi:nodetypes="czzsz"
+         id="path2160"
+         d="m 267.23066,523.00854 c -20.30072,-6.87692 25.37208,-143.26509 47.45459,-143.53884 22.59761,-0.27377 71.55851,139.34527 45.19487,144.14269 -25.51041,4.64216 -31.8008,-24.03249 -45.83645,-24.03249 -19.83867,0 -25.83523,30.53487 -46.81301,23.42864 z"
+         style="fill:#395261;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.29888570000000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         inkscape:export-ydpi="72.455208"
+         inkscape:export-xdpi="72.455208"
+         inkscape:export-filename="/home/silveira/Área de Trabalho/Duke_Luau.png"
+         inkscape:transform-center-y="7.9709911"
+         style="opacity:0.4;fill:url(#linearGradient4944);fill-opacity:1;fill-rule:evenodd;stroke:none"
+         d="m 264.31602,518.47496 c -4.65029,-5.9734 2.24779,-37.45693 5.96428,-37.72026 3.28434,-0.23271 14.76513,25.26464 11.14776,34.51434 -3.72626,9.52821 -12.54863,9.06775 -17.11204,3.20592 z"
+         id="path3268"
+         sodipodi:nodetypes="czzz" />
+      <path
+         inkscape:connector-curvature="0"
+         inkscape:export-ydpi="72.455208"
+         inkscape:export-xdpi="72.455208"
+         inkscape:export-filename="/home/silveira/Área de Trabalho/Duke_Luau.png"
+         sodipodi:nodetypes="czzz"
+         id="path3258"
+         d="m 289.40764,426.87529 c -3.6392,-6.68695 7.94593,-29.7763 14.29218,-34.85119 6.34621,-5.07491 12.20294,6.25769 7.16767,14.76259 -5.18688,8.76097 -17.88861,26.65066 -21.45985,20.0886 z"
+         style="fill:url(#linearGradient4941);fill-opacity:1;fill-rule:evenodd;stroke:none" />
+      <path
+         inkscape:connector-curvature="0"
+         inkscape:export-ydpi="72.455208"
+         inkscape:export-xdpi="72.455208"
+         inkscape:export-filename="/home/silveira/Área de Trabalho/Duke_Luau.png"
+         sodipodi:nodetypes="czzz"
+         id="path3272"
+         d="m 363.47043,517.12311 c 4.65029,-5.97339 -2.24779,-37.45692 -5.96426,-37.72025 -3.28436,-0.23272 -14.76512,25.26464 -11.14777,34.51434 3.72628,9.5282 12.54861,9.06774 17.11203,3.20591 z"
+         style="opacity:0.4;fill:url(#linearGradient4938);fill-opacity:1;fill-rule:evenodd;stroke:none"
+         inkscape:transform-center-y="7.9709937" />
+      <path
+         inkscape:export-ydpi="46.32"
+         inkscape:export-xdpi="46.32"
+         inkscape:export-filename="/home/silveira/Documentos/SUN/logos/duke/duke_help.png"
+         transform="matrix(-0.23530826,-0.09868742,0.09290205,-0.23876048,349.71833,604.18075)"
+         d="m 682.8631,509.91028 a 328.29956,328.29956 0 1 1 -656.599123,0 328.29956,328.29956 0 1 1 656.599123,0 z"
+         sodipodi:ry="328.29956"
+         sodipodi:rx="328.29956"
+         sodipodi:cy="509.91028"
+         sodipodi:cx="354.56354"
+         id="path2274"
+         style="fill:none;stroke:none;display:inline"
+         sodipodi:type="arc" />
+      <path
+         inkscape:connector-curvature="0"
+         inkscape:export-ydpi="72.455208"
+         inkscape:export-xdpi="72.455208"
+         inkscape:export-filename="/home/silveira/Área de Trabalho/Duke_Luau.png"
+         sodipodi:nodetypes="cz"
+         id="path10304"
+         d="m 287.44445,533.98959 c 2.30262,27.79042 86.06018,11.05641 96.13412,-21.51514"
+         style="fill:none;stroke:none;display:inline" />
+      <g
+         inkscape:export-ydpi="72.455208"
+         inkscape:export-xdpi="72.455208"
+         inkscape:export-filename="/home/silveira/Área de Trabalho/Duke_Luau.png"
+         transform="matrix(0.23722553,0,0,0.24628745,249.50906,328.75273)"
+         id="g3248">
+        <path
+           sodipodi:type="arc"
+           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;filter:url(#filter3244)"
+           id="path3200"
+           sodipodi:cx="306.07623"
+           sodipodi:cy="523.04224"
+           sodipodi:rx="87.88327"
+           sodipodi:ry="56.568542"
+           d="m 393.9595,523.04224 c 0,31.24194 -39.34668,56.56854 -87.88327,56.56854 -48.53659,0 -87.88327,-25.3266 -87.88327,-56.56854 0,-31.24195 39.34668,-56.56855 87.88327,-56.56855 48.53659,0 87.88327,25.3266 87.88327,56.56855 z"
+           transform="matrix(0.8509675,0,0,1.0184674,54.503624,-36.70999)" />
+        <g
+           id="g3164"
+           transform="translate(-6.0609153,0)">
+          <path
+             transform="translate(-37.142857,0)"
+             d="m 434.28571,472.36218 c 0,44.18278 -35.81722,80 -80,80 -44.18278,0 -80,-35.81722 -80,-80 0,-44.18278 35.81722,-80 80,-80 44.18278,0 80,35.81722 80,80 z"
+             sodipodi:ry="80"
+             sodipodi:rx="80"
+             sodipodi:cy="472.36218"
+             sodipodi:cx="354.28571"
+             id="path3142"
+             style="fill:url(#radialGradient5170);fill-opacity:1;stroke:none"
+             sodipodi:type="arc" />
+          <path
+             transform="translate(2.0203051,-4.0406102)"
+             d="m 354.56355,444.75543 c 0,20.36305 -21.48239,36.87057 -47.98225,36.87057 -26.49986,0 -47.98225,-16.50752 -47.98225,-36.87057 0,-20.36305 21.48239,-36.87057 47.98225,-36.87057 26.49986,0 47.98225,16.50752 47.98225,36.87057 z"
+             sodipodi:ry="36.870567"
+             sodipodi:rx="47.982246"
+             sodipodi:cy="444.75543"
+             sodipodi:cx="306.5813"
+             id="path3154"
+             style="fill:url(#linearGradient5172);fill-opacity:1;stroke:none"
+             sodipodi:type="arc" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="g2667"
+       transform="matrix(-0.09656477,-0.29018719,-0.27360595,0.1002535,776.16155,380.96638)">
+      <path
+         inkscape:export-ydpi="72.455208"
+         inkscape:export-xdpi="72.455208"
+         inkscape:export-filename="/home/silveira/Área de Trabalho/Duke_Luau.png"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         d="m 205.77194,567.67347 c 0,0 22.55936,-25.00797 0.97709,-55.49118 C 171.41944,462.28211 81.248064,316.95757 68.217786,267.66351 55.100114,218.03884 150.94557,414.95235 207.36735,456.23031 c 34.05505,24.91453 60.54372,62.65772 60.54372,62.65772 l -62.13913,48.78544 z"
+         id="path2397"
+         sodipodi:nodetypes="cszscc"
+         inkscape:connector-curvature="0" />
+      <g
+         transform="matrix(-0.09530392,0.9954482,0.9954482,0.09530392,-476.08418,239.97445)"
+         id="g2643">
+        <path
+           sodipodi:nodetypes="cssssc"
+           id="path3422"
+           d="m -37.015485,565.87666 c 15.714557,-5.13556 24.337204,-6.90401 26.022559,0.28329 1.6853614,7.18728 4.1194247,25.21827 -11.927477,21.24106 -10.86981,-2.69406 -16.697665,-2.09307 -20.704436,-5.71894 -6.418433,-5.80826 -4.050575,-7.51765 -7.236421,-13.6223 -3.095169,-5.9309 -3.001128,-0.33739 13.845775,-2.18311 z"
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           inkscape:connector-curvature="0" />
+        <path
+           inkscape:export-ydpi="55.31456"
+           inkscape:export-xdpi="55.31456"
+           inkscape:export-filename="/home/silveira/Desktop/arte/duke_comendo_cafe_com_tapioca.png"
+           transform="matrix(-0.5072719,-1.5254826,-1.7170271,0.5709667,687.97257,659.79362)"
+           d="m 212.85715,346.82648 c 0,8.58014 -8.47461,15.53571 -18.92858,15.53571 -10.45396,0 -18.92857,-6.95557 -18.92857,-15.53571 0,-8.58014 8.47461,-15.53572 18.92857,-15.53572 10.45397,0 18.92858,6.95558 18.92858,15.53572 z"
+           sodipodi:ry="15.535714"
+           sodipodi:rx="18.928572"
+           sodipodi:cy="346.82648"
+           sodipodi:cx="193.92857"
+           id="path2342"
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           sodipodi:type="arc" />
+        <path
+           inkscape:export-ydpi="55.31456"
+           inkscape:export-xdpi="55.31456"
+           inkscape:export-filename="/home/silveira/Desktop/arte/duke_comendo_cafe_com_tapioca.png"
+           inkscape:transform-center-y="-15.271685"
+           transform="matrix(-0.2608307,0.5527574,-3.3847505,-2.4707418,1185.6931,1305.0545)"
+           d="m 203.04066,349.29602 c 0,3.34735 -7.46231,6.06092 -16.66752,6.06092 -9.20522,0 -16.66752,-2.71357 -16.66752,-6.06092 0,-3.34735 7.4623,-6.06091 16.66752,-6.06091 9.20521,0 16.66752,2.71356 16.66752,6.06091 z"
+           sodipodi:ry="6.0609155"
+           sodipodi:rx="16.667517"
+           sodipodi:cy="349.29602"
+           sodipodi:cx="186.37314"
+           id="path2344"
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           sodipodi:type="arc"
+           inkscape:transform-center-x="-4.3617584" />
+        <path
+           inkscape:export-ydpi="55.31456"
+           inkscape:export-xdpi="55.31456"
+           inkscape:export-filename="/home/silveira/Desktop/arte/duke_comendo_cafe_com_tapioca.png"
+           inkscape:transform-center-x="-14.059084"
+           sodipodi:type="arc"
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           id="path2346"
+           sodipodi:cx="186.37314"
+           sodipodi:cy="349.29602"
+           sodipodi:rx="16.667517"
+           sodipodi:ry="6.0609155"
+           d="m 203.04066,349.29602 c 0,3.34735 -7.46231,6.06092 -16.66752,6.06092 -9.20522,0 -16.66752,-2.71357 -16.66752,-6.06092 0,-3.34735 7.4623,-6.06091 16.66752,-6.06091 9.20521,0 16.66752,2.71356 16.66752,6.06091 z"
+           transform="matrix(-0.5799527,0.1929466,-0.5495368,-4.1544085,270.95849,1941.4261)"
+           inkscape:transform-center-y="-7.3883831" />
+        <path
+           inkscape:export-ydpi="55.31456"
+           inkscape:export-xdpi="55.31456"
+           inkscape:export-filename="/home/silveira/Desktop/arte/duke_comendo_cafe_com_tapioca.png"
+           inkscape:transform-center-y="-10.565508"
+           transform="matrix(-0.4974459,-0.03786751,0.5126495,-3.0981951,-96.975338,1612.7545)"
+           d="m 203.04066,349.29602 c 0,3.34735 -7.46231,6.06092 -16.66752,6.06092 -9.20522,0 -16.66752,-2.71357 -16.66752,-6.06092 0,-3.34735 7.4623,-6.06091 16.66752,-6.06091 9.20521,0 16.66752,2.71356 16.66752,6.06091 z"
+           sodipodi:ry="6.0609155"
+           sodipodi:rx="16.667517"
+           sodipodi:cy="349.29602"
+           sodipodi:cx="186.37314"
+           id="path2348"
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           sodipodi:type="arc"
+           inkscape:transform-center-x="-5.7975854" />
+        <path
+           inkscape:transform-center-y="-9.213082"
+           transform="matrix(-0.412449,-0.1057743,1.1706948,-2.3462538,-330.5978,1368.2856)"
+           d="m 203.04066,349.29602 c 0,3.34735 -7.46231,6.06092 -16.66752,6.06092 -9.20522,0 -16.66752,-2.71357 -16.66752,-6.06092 0,-3.34735 7.4623,-6.06091 16.66752,-6.06091 9.20521,0 16.66752,2.71356 16.66752,6.06091 z"
+           sodipodi:ry="6.0609155"
+           sodipodi:rx="16.667517"
+           sodipodi:cy="349.29602"
+           sodipodi:cx="186.37314"
+           id="path2359"
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           sodipodi:type="arc"
+           inkscape:transform-center-x="-5.5073374"
+           inkscape:export-filename="/home/silveira/Desktop/arte/duke_comendo_cafe_com_tapioca.png"
+           inkscape:export-xdpi="55.31456"
+           inkscape:export-ydpi="55.31456" />
+      </g>
+    </g>
+    <g
+       id="layer1-5"
+       inkscape:label="Calque"
+       style="display:inline"
+       transform="matrix(0.64867693,0,0,0.71775757,450.08656,119.25792)">
+      <g
+         id="g5472"
+         transform="matrix(0.79992148,0.60010463,-0.60010463,0.79992148,236.53688,-192.07873)">
+        <path
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cszscc"
+           id="path2679"
+           d="m 308.82428,291.56724 c 0,0 0.80252,-12.81101 11.12481,-25.27043 16.89729,-20.39573 43.7824,-59.95025 50.60893,-80.54681 6.87231,-20.7347 -40.15257,60.64353 -66.3985,76.95727 -15.84152,9.84665 -19.67404,13.62571 -19.67404,13.62571 l 24.3388,15.23426 z"
+           style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none"
+           inkscape:export-filename="/home/silveira/Área de Trabalho/Duke_Luau.png"
+           inkscape:export-xdpi="72.455208"
+           inkscape:export-ydpi="72.455208" />
+        <path
+           inkscape:export-ydpi="55.31456"
+           inkscape:export-xdpi="55.31456"
+           inkscape:export-filename="/home/silveira/Desktop/arte/duke_comendo_cafe_com_tapioca.png"
+           transform="matrix(0.66388172,-0.2755453,-0.33054565,-0.70111965,349.21006,490.39216)"
+           d="m 212.85715,346.82648 c 0,8.58014 -8.47461,15.53571 -18.92858,15.53571 -10.45396,0 -18.92857,-6.95557 -18.92857,-15.53571 0,-8.58014 8.47461,-15.53572 18.92857,-15.53572 10.45397,0 18.92858,6.95558 18.92858,15.53572 z"
+           sodipodi:ry="15.535714"
+           sodipodi:rx="18.928572"
+           sodipodi:cy="346.82648"
+           sodipodi:cx="193.92857"
+           id="path2683"
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           sodipodi:type="arc" />
+        <path
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cssssc"
+           id="path2693"
+           d="m 361.32978,182.00788 c 2.98475,6.42041 2.84397,12.44361 -0.31422,13.44465 -3.15819,1.00104 -11.15847,2.75571 -10.06128,-4.17284 0.74321,-4.69325 2.82195,-9.06055 1.91331,-11.23454 -1.36379,-3.26297 -4.66345,-7.22194 -2.6663,-7.85497 3.15819,-1.00104 8.14376,3.3973 11.12849,9.8177 z"
+           style="fill:#000000;fill-opacity:1;stroke:none" />
+        <path
+           inkscape:export-ydpi="55.31456"
+           inkscape:export-xdpi="55.31456"
+           inkscape:export-filename="/home/silveira/Desktop/arte/duke_comendo_cafe_com_tapioca.png"
+           inkscape:transform-center-y="9.7893528"
+           transform="matrix(0.18602019,0.12057453,-0.87310995,1.0391394,644.48504,-192.22389)"
+           d="m 203.04066,349.29602 c 0,3.34735 -7.46231,6.06092 -16.66752,6.06092 -9.20522,0 -16.66752,-2.71357 -16.66752,-6.06092 0,-3.34735 7.4623,-6.06091 16.66752,-6.06091 9.20521,0 16.66752,2.71356 16.66752,6.06091 z"
+           sodipodi:ry="6.0609155"
+           sodipodi:rx="16.667517"
+           sodipodi:cy="349.29602"
+           sodipodi:cx="186.37314"
+           id="path2689"
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           sodipodi:type="arc"
+           inkscape:transform-center-x="-5.151685" />
+        <path
+           inkscape:export-ydpi="55.31456"
+           inkscape:export-xdpi="55.31456"
+           inkscape:export-filename="/home/silveira/Desktop/arte/duke_comendo_cafe_com_tapioca.png"
+           inkscape:transform-center-y="13.692053"
+           transform="matrix(0.25969233,0.08768825,-0.96494699,1.5273221,651.87484,-366.22473)"
+           d="m 203.04066,349.29602 c 0,3.34735 -7.46231,6.06092 -16.66752,6.06092 -9.20522,0 -16.66752,-2.71357 -16.66752,-6.06092 0,-3.34735 7.4623,-6.06091 16.66752,-6.06091 9.20521,0 16.66752,2.71356 16.66752,6.06091 z"
+           sodipodi:ry="6.0609155"
+           sodipodi:rx="16.667517"
+           sodipodi:cy="349.29602"
+           sodipodi:cx="186.37314"
+           id="path2685"
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           sodipodi:type="arc"
+           inkscape:transform-center-x="4.1235917" />
+        <path
+           inkscape:export-ydpi="55.31456"
+           inkscape:export-xdpi="55.31456"
+           inkscape:export-filename="/home/silveira/Desktop/arte/duke_comendo_cafe_com_tapioca.png"
+           inkscape:transform-center-x="-5.099556"
+           sodipodi:type="arc"
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           id="path2687"
+           sodipodi:cx="186.37314"
+           sodipodi:cy="349.29602"
+           sodipodi:rx="16.667517"
+           sodipodi:ry="6.0609155"
+           d="m 203.04066,349.29602 c 0,3.34735 -7.46231,6.06092 -16.66752,6.06092 -9.20522,0 -16.66752,-2.71357 -16.66752,-6.06092 0,-3.34735 7.4623,-6.06091 16.66752,-6.06091 9.20521,0 16.66752,2.71356 16.66752,6.06091 z"
+           transform="matrix(-0.25089943,-0.10335775,1.0768604,-1.4744815,39.836035,722.4149)"
+           inkscape:transform-center-y="-13.393069" />
+      </g>
+    </g>
+  </g>
+</svg>

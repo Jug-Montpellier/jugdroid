@@ -36,5 +36,10 @@
 			<type>2</type>
 			<locationURI>_android_GreenDroid_612cb559/src</locationURI>
 		</link>
+		<link>
+			<name>viewflow_src</name>
+			<type>2</type>
+			<locationURI>_android_viewflow_474f6153/src</locationURI>
+		</link>
 	</linkedResources>
 </projectDescription>
