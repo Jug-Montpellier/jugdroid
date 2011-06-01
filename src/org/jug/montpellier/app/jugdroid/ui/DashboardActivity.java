@@ -82,6 +82,7 @@ public class DashboardActivity extends GDActivity {
 	//======  Click handlers for Dashboard buttons  ======
 	@Click(R.id.home_btn_schedule)
 	void scheduleClicked() {
+		startActivity(new Intent(this, EventsActivity_.class));
 	}
 
 	@Click(R.id.home_btn_sessions)

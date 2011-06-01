@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:jugdroid="http://schemas.android.com/apk/res/org.jug.montpellier.app.jugdroid"
+	android:layout_width="fill_parent" android:layout_height="wrap_content"
+	android:orientation="horizontal">
+	<LinearLayout android:layout_height="fill_parent" android:background="#FFFF0000" android:layout_width="10dip" android:id="@+id/state"/>
+
+	<LinearLayout android:layout_width="fill_parent"
+		android:orientation="vertical" android:layout_height="wrap_content" android:padding="4dip">
+		<TextView android:paddingLeft="10dp" android:gravity="center_vertical|left"
+			android:layout_height="wrap_content" android:layout_width="fill_parent"
+			android:textSize="20dip" android:textStyle="bold" android:text="Soirée Android et GAE" android:id="@+id/name"/>
+		<TextView android:layout_height="wrap_content"
+			android:paddingLeft="10dip" android:layout_width="fill_parent"
+			android:gravity="center_vertical|left" android:text="01 janv. 2012" android:id="@+id/date"></TextView>
+	</LinearLayout>
+
+</LinearLayout>
