@@ -48,7 +48,8 @@ public class MembersAdapter extends BaseAdapter implements ImageProcessor {
 	}
 
 	private Bitmap mMask;
-	private int mThumbnailSize;
+	private int mThumbnailSizeHeight;
+	private int mThumbnailSizeWidth;
 	private int mThumbnailRadius;
 	private LayoutInflater mInflater;
 
@@ -60,7 +61,8 @@ public class MembersAdapter extends BaseAdapter implements ImageProcessor {
 	public MembersAdapter(Context context) {
 		mInflater = LayoutInflater.from(context);
 		mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-		mThumbnailSize = context.getResources().getDimensionPixelSize(R.dimen.thumbnail_size);
+		mThumbnailSizeHeight = context.getResources().getDimensionPixelSize(R.dimen.thumbnail_size_height);
+		mThumbnailSizeWidth = context.getResources().getDimensionPixelSize(R.dimen.thumbnail_size_width);
 		mThumbnailRadius = context.getResources().getDimensionPixelSize(R.dimen.thumbnail_radius);
 		prepareMask();
 	}
@@ -69,12 +71,12 @@ public class MembersAdapter extends BaseAdapter implements ImageProcessor {
 	 * Draw the background
 	 */
 	private void prepareMask() {
-		mMask = Bitmap.createBitmap(mThumbnailSize, mThumbnailSize, Bitmap.Config.ARGB_8888);
+		mMask = Bitmap.createBitmap(mThumbnailSizeWidth, mThumbnailSizeHeight, Bitmap.Config.ARGB_8888);
 		Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
 		paint.setColor(Color.RED);
 		paint.setStyle(Paint.Style.FILL_AND_STROKE);
 		Canvas c = new Canvas(mMask);
-		c.drawRoundRect(new RectF(0, 0, mThumbnailSize, mThumbnailSize), mThumbnailRadius, mThumbnailRadius, paint);
+		c.drawRoundRect(new RectF(0, 0, mThumbnailSizeWidth, mThumbnailSizeHeight), mThumbnailRadius, mThumbnailRadius, paint);
 	}
 
 	/**
@@ -167,11 +169,11 @@ public class MembersAdapter extends BaseAdapter implements ImageProcessor {
 	 * Process and display an image white it has beeen loaded
 	 */
 	public Bitmap processImage(Bitmap bitmap) {
-		Bitmap result = Bitmap.createBitmap(mThumbnailSize, mThumbnailSize, Bitmap.Config.ARGB_8888);
+		Bitmap result = Bitmap.createBitmap(mThumbnailSizeWidth, mThumbnailSizeHeight, Bitmap.Config.ARGB_8888);
 		Canvas c = new Canvas(result);
 
 		mRectSrc.set(0, 0, bitmap.getWidth(), bitmap.getHeight());
-		mRectDest.set(0, 0, mThumbnailSize, mThumbnailSize);
+		mRectDest.set(0, 0, mThumbnailSizeWidth, mThumbnailSizeHeight);
 		c.drawBitmap(bitmap, mRectSrc, mRectDest, null);
 		c.drawBitmap(mMask, 0, 0, mPaint);
 		return result;

@@ -24,6 +24,8 @@ import android.util.Log;
  */
 public class RestClient {
 
+	private static final String HOST = "http://192.168.1.35:9000";
+	
 	/**
 	 * To convert the InputStream to String we use the BufferedReader.readLine()
 	 * method. We iterate until the BufferedReader return null which means
@@ -55,15 +57,15 @@ public class RestClient {
 	 * This method may return null if no response has been received or if an
 	 * error occured
 	 */
-	public static String send(String url) throws Exception {
+	public static String send(String uri) throws Exception {
 		HttpClient httpclient = new DefaultHttpClient();
 
 		// Prepare a request object
-		HttpGet httpget = new HttpGet(url);
+		HttpGet httpget = new HttpGet(HOST + uri);
 		// Execute the request
 		HttpResponse response;
 		try {
-			Log.d("JudDroid", url);
+			Log.d("JudDroid", uri);
 			response = httpclient.execute(httpget);
 			Log.d("JudDroid", response.toString());
 

@@ -83,7 +83,7 @@ public class PartnersActivity extends JugActivity implements OnItemClickListener
 		ArrayList<Partner> partners = null;
 		// Call the REST service
 		try {
-			String jsonStr = RestClient.send("http://192.168.2.13:9000/api/partners/currentyear.json");
+			String jsonStr = RestClient.send("/api/partners/currentyear.json");
 			if (jsonStr != null) {
 				JsonFactory jsonFactory = new JsonFactory();
 				JsonParser jp = jsonFactory.createJsonParser(jsonStr);

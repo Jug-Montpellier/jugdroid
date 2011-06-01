@@ -66,7 +66,7 @@ public class MembersActivity extends JugListActivity {
 		ArrayList<Speaker> speakers = null;
 		// Call the REST service
 		try {
-			String jsonStr = RestClient.send("http://192.168.2.13:9000/api/members.json");
+			String jsonStr = RestClient.send("/api/members/all.json");
 			if (jsonStr != null) {
 				JsonFactory jsonFactory = new JsonFactory();
 				JsonParser jp = jsonFactory.createJsonParser(jsonStr);
