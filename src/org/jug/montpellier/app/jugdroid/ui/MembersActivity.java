@@ -5,19 +5,14 @@ package org.jug.montpellier.app.jugdroid.ui;
 
 import java.util.ArrayList;
 
-import org.codehaus.jackson.JsonFactory;
-import org.codehaus.jackson.JsonParser;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.type.TypeReference;
-import org.json.JSONException;
 import org.jug.montpellier.app.jugdroid.R;
+import org.jug.montpellier.app.jugdroid.core.BackendException;
 import org.jug.montpellier.app.jugdroid.core.RestClient;
 import org.jug.montpellier.app.jugdroid.models.Speaker;
 import org.jug.montpellier.app.jugdroid.ui.adapter.MembersAdapter;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -40,7 +35,7 @@ public class MembersActivity extends JugListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		adapter = new MembersAdapter(this); 
+		adapter = new MembersAdapter(this);
 		setListAdapter(adapter);
 		// Update members list
 		setLoading(true);
@@ -50,44 +45,28 @@ public class MembersActivity extends JugListActivity {
 	/**
 	 * The user has clicked on a member to see details
 	 */
-    @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-        final Speaker speaker = (Speaker) adapter.getItem(position);
-        Intent intent = new Intent(this, MemberDetailActivity_.class);
-        intent.putExtra(MemberDetailActivity.SPEAKER_EXTRA, speaker);
-        startActivity(intent);
-    }
-	
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		final Speaker speaker = (Speaker) adapter.getItem(position);
+		Intent intent = new Intent(this, MemberDetailActivity_.class);
+		intent.putExtra(MemberDetailActivity.SPEAKER_EXTRA, speaker);
+		startActivity(intent);
+	}
+
 	/**
 	 * Get JUG members list
 	 */
 	@Background
 	void updateMembers() {
 		ArrayList<Speaker> speakers = null;
-		// Call the REST service
 		try {
-			String jsonStr = RestClient.send("http://192.168.2.13:9000/api/members.json");
-			if (jsonStr != null) {
-				JsonFactory jsonFactory = new JsonFactory();
-				JsonParser jp = jsonFactory.createJsonParser(jsonStr);
-				ObjectMapper objectMapper = new ObjectMapper();
-				// Parse response
-				speakers = objectMapper.readValue(jp, new TypeReference<ArrayList<Speaker>>() {
-				});
-			}
+			// Call the REST service
+			speakers = RestClient.getList(Speaker.class, "/api/members.json");
 		}
-		catch (JSONException e) {
-			toastMessage((String) getText(R.string.error_getting_information), Toast.LENGTH_LONG);
-			Log.e("JugDroid", "Error while parsing JSON response", e);
-		}
-		catch (Exception e) {
-			// Other exceptions have already been logged
+		catch (BackendException e) {
 			toastMessage((String) getText(R.string.error_getting_information), Toast.LENGTH_LONG);
 		}
-		finally {
-			updateMembersUI(speakers);
-		}
-
+		updateMembersUI(speakers);
 	}
 
 	/*
