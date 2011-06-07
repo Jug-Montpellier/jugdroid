@@ -115,6 +115,7 @@ public class DashboardActivity extends GDActivity {
             case R.id.action_bar_refresh:
                 return true;
             case R.id.action_bar_info:
+        		startActivity(new Intent(this, InfoTabActivity.class));
                 return true;
             default:
                 return super.onHandleActionBarItemClick(item, position);

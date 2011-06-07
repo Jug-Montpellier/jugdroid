@@ -30,6 +30,7 @@ import android.util.Log;
 public class RestClient {
 
 	public final static String HOST = "http://192.168.2.13:9000";
+
 	
 	/**
 	 * To convert the InputStream to String we use the BufferedReader.readLine()

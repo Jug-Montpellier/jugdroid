@@ -22,7 +22,9 @@
     <dimen name="text_size_medium">18sp</dimen>
     <dimen name="text_size_large">22sp</dimen>
     
-    <dimen name="thumbnail_size">50dp</dimen>
-    <dimen name="thumbnail_detail_size">70dp</dimen>
+    <dimen name="thumbnail_size_width">50dip</dimen>
+    <dimen name="thumbnail_size_height">50dip</dimen>
+    <dimen name="thumbnail_detail_size_width">70dip</dimen>
+    <dimen name="thumbnail_detail_size_height">70dip</dimen>
     <dimen name="thumbnail_radius">5dp</dimen>
 </resources>

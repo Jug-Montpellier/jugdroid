@@ -8,8 +8,8 @@ import greendroid.app.GDApplication;
 import org.acra.ACRA;
 import org.acra.ReportingInteractionMode;
 import org.acra.annotation.ReportsCrashes;
-import org.jug.montpellier.app.jugdroid.ui.DashboardActivity_;
-
+import org.jug.montpellier.app.jugdroid.ui.DashboardActivity_;  
+ 
 
 
 /**

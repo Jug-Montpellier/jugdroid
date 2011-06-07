@@ -5,8 +5,7 @@
 	android:orientation="horizontal" android:padding="8dp">
 
 	<greendroid.widget.AsyncImageView
-		android:id="@+id/async_image" android:layout_width="@dimen/thumbnail_size"
-		android:layout_height="@dimen/thumbnail_size" jugdroid:defaultSrc="@drawable/user" />
+		android:id="@+id/async_image" jugdroid:defaultSrc="@drawable/user" android:scaleType="center" android:layout_height="@dimen/thumbnail_size_height" android:layout_width="@dimen/thumbnail_size_width"/>
 
 	<LinearLayout android:layout_width="fill_parent"
 		android:orientation="vertical" android:layout_height="wrap_content">
