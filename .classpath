@@ -12,7 +12,8 @@
 			<attribute name="optional" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="viewflow_src"/>
 	<classpathentry kind="src" path="GreenDroid_src"/>
+	<classpathentry kind="src" path="viewflow_src"/>
+	<classpathentry kind="var" path="ANDROID_HOME/extras/android/compatibility/v4/android-support-v4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

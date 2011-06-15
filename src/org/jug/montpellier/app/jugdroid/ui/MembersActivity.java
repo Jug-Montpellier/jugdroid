@@ -13,16 +13,15 @@ import org.json.JSONException;
 import org.jug.montpellier.app.jugdroid.R;
 import org.jug.montpellier.app.jugdroid.core.RestClient;
 import org.jug.montpellier.app.jugdroid.models.Speaker;
-import org.jug.montpellier.app.jugdroid.ui.adapter.MembersAdapter;
+import org.jug.montpellier.app.jugdroid.ui.MemberListFragment.SpeakerSelectedListener;
 
 import android.content.Intent;
-import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
-import android.view.View;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.googlecode.androidannotations.annotations.Background;
+import com.googlecode.androidannotations.annotations.BeforeCreate;
 import com.googlecode.androidannotations.annotations.EActivity;
 import com.googlecode.androidannotations.annotations.UiThread;
 
@@ -32,29 +31,23 @@ import com.googlecode.androidannotations.annotations.UiThread;
  * @author etaix
  */
 @EActivity
-public class MembersActivity extends JugListActivity {
-
-	// Members adapter
-	private MembersAdapter adapter;
-
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		adapter = new MembersAdapter(this); 
-		setListAdapter(adapter);
-		// Update members list
-		setLoading(true);
-		updateMembers();
-	}
+public class MembersActivity extends JugActivity implements SpeakerSelectedListener {
 
 	/**
-	 * The user has clicked on a member to see details
+	 * Set the content view as we can't set it using EActivity annotation
+	 * because GreenDroid doesn't use the conventionnal #setContentView method.<br/>
 	 */
-    @Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-        final Speaker speaker = (Speaker) adapter.getItem(position);
+	@BeforeCreate
+	public void onBeforeCreate() {
+		// Load the layout according to the current orientation layout. See layout/activity_members.xml et layout-land/activity-member.xml
+		setActionBarContentView(R.layout.activity_member);
+	}
+	
+
+	@Override
+	public void onListItemSelected(Speaker speaker, int index) {
         Intent intent = new Intent(this, MemberDetailActivity_.class);
-        intent.putExtra(MemberDetailActivity.SPEAKER_EXTRA, speaker);
+        intent.putExtra("speaker", (Parcelable)speaker);
         startActivity(intent);
     }
 	

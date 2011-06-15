@@ -59,8 +59,8 @@ public class MemberDetailActivity extends GDActivity {
 			descView.setText(speaker.description);
 			personalView.setText(speaker.personalURL);
 			// Set the image URL which will ne download in the background
-			if (speaker.image != null && speaker.image.length() > 0) {
-				imageView.setUrl(speaker.image);
+			if (speaker.photoUrl != null && speaker.photoUrl.length() > 0) {
+				imageView.setUrl(speaker.photoUrl); 
 			}
 		}
 	}

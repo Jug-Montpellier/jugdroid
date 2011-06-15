@@ -59,7 +59,7 @@ public class SessionDetailActivity extends JugActivity {
 	 */
 	@BeforeCreate
 	public void onBeforeCreate() {
-		setActionBarContentView(R.layout.activity_members);
+		setActionBarContentView(R.layout.activity_members2);
 	}
 
 	/**

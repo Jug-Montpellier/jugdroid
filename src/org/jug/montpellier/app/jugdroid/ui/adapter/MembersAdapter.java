@@ -113,8 +113,8 @@ public class MembersAdapter extends AsyncImageAdapter {
 			}
 
 			// Set the image URL which will be loaded
-			if (speaker.image != null && speaker.image.length() > 0) {
-				holder.imageView.setUrl(speaker.image);
+			if (speaker.photoUrl != null && speaker.photoUrl.length() > 0) {
+				holder.imageView.setUrl(speaker.photoUrl);
 			}
 			holder.imageView.setPaused(false);
 			// Set the fullname
