@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:jugdroid="http://schemas.android.com/apk/res/org.jug.montpellier.app.jugdroid"
+	android:layout_width="fill_parent" android:orientation="vertical"
+	android:layout_height="wrap_content">
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:orientation="horizontal"
+		android:padding="8dp">
+		<org.jug.montpellier.app.jugdroid.ui.widget.RoundedImageView
+			android:maxWidth="@dimen/thumbnail_size_width" android:maxHeight="@dimen/thumbnail_size_height"
+			android:layout_height="@dimen/thumbnail_detail_size_height"
+			android:layout_width="@dimen/thumbnail_detail_size_width"
+			android:src="@drawable/user" android:id="@+id/logo" android:layout_gravity="top"/>
+		<LinearLayout android:layout_width="fill_parent"
+			android:orientation="vertical" android:layout_height="wrap_content" android:layout_gravity="center_vertical">
+			<TextView android:paddingLeft="10dp" android:gravity="center_vertical|left"
+				android:layout_height="wrap_content" android:textAppearance="?android:attr/textAppearanceLarge"
+				android:text="PlayApps" android:textStyle="bold" android:id="@+id/name" android:layout_width="wrap_content" android:layout_gravity="center_horizontal"/>
+		</LinearLayout>
+	</LinearLayout>
+	<TextView android:layout_height="wrap_content"
+		android:paddingLeft="10dip" android:textAppearance="?android:attr/textAppearanceMedium"
+		android:text="http://www.playapps.com" android:layout_width="fill_parent"
+		android:id="@+id/webSite" android:autoLink="web"></TextView>
+	<ScrollView android:layout_width="match_parent"
+		android:layout_height="wrap_content" android:id="@+id/scrollView1">
+		<TextView android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:paddingRight="10dip"
+			android:autoLink="web|email" android:textAppearance="?android:attr/textAppearanceSmall"
+			android:id="@+id/description" android:paddingLeft="10dip"
+			android:text="PlayApps is the cloud platform for Play! applications." android:paddingTop="20dip"></TextView>
+	</ScrollView>
+</LinearLayout>

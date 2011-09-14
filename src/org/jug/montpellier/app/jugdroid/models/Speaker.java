@@ -41,8 +41,10 @@ public class Speaker implements Serializable, Parcelable {
 	public String description;
 	// The photo URL
 	@JsonProperty(value="photoUrl")
-	public String photoUrl = "http://192.168.2.13:9000/public/images/logo.png";
-
+	public String photoUrl = null;
+	// The member fonction
+	@JsonProperty(value="memberFct")
+	public String memberFct;
 	
 	/**
 	 * Default constructor which is not called from Parcel

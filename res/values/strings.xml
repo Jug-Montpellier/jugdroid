@@ -2,7 +2,8 @@
 <resources>
     <string name="about">About</string>
     <string name="about_content">JUGDROID is an application for the Android platform. It is intended to inform you about news, events and much more in your JUG.\n\n\nThis project uses powerful libraries:\n\nGreendroid - Author: Cyril Mottier\nACRA - Author: Kevin Gaudin\nAndroidAnnotations - Author: Pierre-Yves Ricau\n\nThanks for their respectives authors</string>
-    <string name="app_name">Jug Montpellier</string>
+    <string name="action_label_refresh">Refresh</string>
+    <string name="app_name">jugdroid</string>
     <string name="app_url">http://www.jug-montpellier.org</string>
     <string name="crash_toast_text">Ooooops ! I crashed, but a report has been sent to my developer to help him fix the issue !</string>
 	<string name="error_getting_information">Ooooops ! I can\'t retrieve information. Please try again later.</string>

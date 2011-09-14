@@ -3,17 +3,16 @@
  */
 package org.jug.montpellier.app.jugdroid.ui.adapter;
 
-import greendroid.widget.AsyncImageView;
-
 import java.util.ArrayList;
 
 import org.jug.montpellier.app.jugdroid.R;
 import org.jug.montpellier.app.jugdroid.models.Partner;
 
-import android.content.Context;
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -24,10 +23,14 @@ import android.widget.TextView;
  */
 public class PartnersAdapter extends AsyncImageAdapter {
 	// The partners list
-	private ArrayList<Partner> partners;
-
+	protected ArrayList<Partner> partners;
+	// The asynchronous image loader
+	protected ImageLoader imgLoader;
+	// The current activity
+	protected Activity activity;
+	
 	static class ViewHolder {
-		public AsyncImageView imageView;
+		public ImageView imageView;
 		public TextView nameView;
 		public TextView urlView;
 	}
@@ -36,8 +39,10 @@ public class PartnersAdapter extends AsyncImageAdapter {
 	 * 
 	 * @param context
 	 */
-	public PartnersAdapter(Context context) {
-		super(context);
+	public PartnersAdapter(Activity activityP) {
+		super(activityP);
+		activity = activityP;
+		imgLoader = new ImageLoader(activityP);
 	}
 
 	/**
@@ -61,6 +66,14 @@ public class PartnersAdapter extends AsyncImageAdapter {
 			return partners.size();
 		}
 		return 0;
+	}
+
+	/**
+	 * Return the last known partners
+	 * @return
+	 */
+	public ArrayList<Partner> getPartners() {
+		return partners;		
 	}
 
 	/*
@@ -100,12 +113,11 @@ public class PartnersAdapter extends AsyncImageAdapter {
 		if (partner != null) {
 			ViewHolder holder;
 			if (convertView == null) {
-				convertView = inflater.inflate(R.layout.image_item2_view, parent, false);
+				convertView = inflater.inflate(R.layout.partner_item, parent, false);
 				holder = new ViewHolder();
-				holder.imageView = (AsyncImageView) convertView.findViewById(R.id.async_image);
-				holder.imageView.setImageProcessor(this);
-				holder.nameView = (TextView) convertView.findViewById(R.id.fullname);
-				holder.urlView = (TextView) convertView.findViewById(R.id.jobposition);
+				holder.imageView = (ImageView) convertView.findViewById(R.id.logo);
+				holder.nameView = (TextView) convertView.findViewById(R.id.name);
+				holder.urlView = (TextView) convertView.findViewById(R.id.webSite);
 				convertView.setTag(holder);
 			}
 			else {
@@ -114,12 +126,11 @@ public class PartnersAdapter extends AsyncImageAdapter {
 
 			// Set the image URL which will be loaded
 			if (partner.logoURL != null && partner.logoURL.length() > 0) {
-				holder.imageView.setUrl(partner.logoURL);
+				imgLoader.displayImage(partner.logoURL, activity, holder.imageView, true);
 			}
-			holder.imageView.setPaused(false);
 			// Set the name
 			holder.nameView.setText(partner.name);
-			// Set the web site url
+			// Set the web site URL
 			holder.urlView.setText(partner.websiteUrl);
 			return convertView;
 		}

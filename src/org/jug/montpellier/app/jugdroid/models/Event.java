@@ -10,7 +10,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
 
 /**
  * This class defines an event. An event can be a future event or a past event.<br/>
- * @author eric
+ * @author Eric Taix
  */
 @SuppressWarnings("serial")
 @JsonIgnoreProperties(ignoreUnknown=true)

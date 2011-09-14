@@ -2,18 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:jugdroid="http://schemas.android.com/apk/res/org.jug.montpellier.app.jugdroid"
 	android:layout_width="fill_parent" android:orientation="vertical"
-	android:layout_height="wrap_content"
-	android:paddingTop="20dip">
+	android:layout_height="wrap_content" android:paddingTop="20dip">
 	<LinearLayout android:layout_width="fill_parent"
 		android:layout_height="wrap_content" android:orientation="horizontal"
 		android:padding="8dp">
-
-		<greendroid.widget.AsyncImageView
-			android:id="@+id/async_image" jugdroid:defaultSrc="@drawable/user"
-			android:layout_height="@dimen/thumbnail_detail_size_height"
-			android:layout_width="@dimen/thumbnail_detail_size_width"
-			android:scaleType="fitXY" />
-
 		<LinearLayout android:layout_width="fill_parent"
 			android:orientation="vertical" android:layout_height="wrap_content">
 			<TextView android:paddingLeft="10dp" android:gravity="center_vertical|left"

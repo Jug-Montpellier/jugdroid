@@ -5,11 +5,9 @@ package org.jug.montpellier.app.jugdroid.ui.adapter;
 
 import java.util.ArrayList;
 
-import org.jug.montpellier.app.jugdroid.R;
 import org.jug.montpellier.app.jugdroid.models.Event;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -103,23 +101,23 @@ public class EventAdapter extends BaseAdapter {
 		if (event != null) {
 			ViewHolder holder;
 			if (convertView == null) {
-				convertView = inflater.inflate(R.layout.event_view, parent, false);
-				holder = new ViewHolder();
-				holder.nameView = (TextView) convertView.findViewById(R.id.name);
-				holder.dateView = (TextView) convertView.findViewById(R.id.date);
-				holder.stateView = (LinearLayout) convertView.findViewById(R.id.state);
-				convertView.setTag(holder);
+//				convertView = inflater.inflate(R.layout.event_view, parent, false);
+//				holder = new ViewHolder();
+//				holder.nameView = (TextView) convertView.findViewById(R.id.name);
+//				holder.dateView = (TextView) convertView.findViewById(R.id.date);
+//				holder.stateView = (LinearLayout) convertView.findViewById(R.id.state);
+//				convertView.setTag(holder);
 			}
 			else {
 				holder = (ViewHolder) convertView.getTag();
 			}
 
 			// Set the name, date 
-			holder.nameView.setText(event.title);
-			holder.dateView.setText(event.date);
-			// Set the state of the event (depends on its internal state - ie opened or closed - and on its date)			
-			holder.stateView.setBackgroundColor(Color.RED);
-			return convertView;
+//			holder.nameView.setText(event.title);
+//			holder.dateView.setText(event.date);
+//			// Set the state of the event (depends on its internal state - ie opened or closed - and on its date)			
+//			holder.stateView.setBackgroundColor(Color.RED);
+//			return convertView;
 		}
 		return null;
 	}

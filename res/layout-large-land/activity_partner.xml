@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <fragment
+        android:name="org.jug.montpellier.app.jugdroid.ui.fragment.MemberListFragment"
+        android:layout_width="0px"
+        android:layout_height="fill_parent"
+        android:id="@+id/partner_list_fragment"
+        android:layout_weight="1">
+    </fragment>
+    <FrameLayout
+		android:id="@+id/partner_detail_frame"
+		android:layout_weight="1"
+		android:layout_width="0px"
+		android:layout_height="fill_parent" />
+</LinearLayout>

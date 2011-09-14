@@ -3,7 +3,6 @@
  */
 package org.jug.montpellier.app.jugdroid.ui.adapter;
 
-import greendroid.image.ImageProcessor;
 
 import org.jug.montpellier.app.jugdroid.R;
 
@@ -26,7 +25,7 @@ import android.widget.BaseAdapter;
  * 
  * @author etaix
  */
-public abstract class AsyncImageAdapter extends BaseAdapter implements ImageProcessor {
+public abstract class AsyncImageAdapter extends BaseAdapter { // implements ImageProcessor {
 
 	private final Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 	private final Rect mRectSrc = new Rect();

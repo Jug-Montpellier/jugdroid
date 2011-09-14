@@ -3,17 +3,16 @@
  */
 package org.jug.montpellier.app.jugdroid.ui.adapter;
 
-import greendroid.widget.AsyncImageView;
-
 import java.util.ArrayList;
 
 import org.jug.montpellier.app.jugdroid.R;
 import org.jug.montpellier.app.jugdroid.models.Speaker;
 
-import android.content.Context;
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -24,20 +23,28 @@ import android.widget.TextView;
  */
 public class MembersAdapter extends AsyncImageAdapter {
 	// The speakers list
-	private ArrayList<Speaker> speakers;
+	protected ArrayList<Speaker> speakers;
+	// The asynchronous image loader
+	protected ImageLoader imgLoader;
+	// The current activity
+	protected Activity activity;
 
 	static class ViewHolder {
-		public AsyncImageView imageView;
+		public ImageView imageView;
 		public TextView fullnameView;
 		public TextView jobPositionView;
+		public TextView memberFonctionView;
 	}
+
 	/**
 	 * Constructor which initialize the thumbnail tools (paint, mask, ...)
 	 * 
 	 * @param context
 	 */
-	public MembersAdapter(Context context) {
-		super(context);
+	public MembersAdapter(Activity activityP) {
+		super(activityP);
+		activity = activityP;
+		imgLoader = new ImageLoader(activityP);
 	}
 
 	/**
@@ -51,6 +58,14 @@ public class MembersAdapter extends AsyncImageAdapter {
 		notifyDataSetChanged();
 	}
 
+	/**
+	 * Return the last known speakers
+	 * @return
+	 */
+	public ArrayList<Speaker> getMembers() {
+		return speakers;		
+	}
+	
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -100,12 +115,11 @@ public class MembersAdapter extends AsyncImageAdapter {
 		if (speaker != null) {
 			ViewHolder holder;
 			if (convertView == null) {
-				convertView = inflater.inflate(R.layout.image_item2_view, parent, false);
+				convertView = inflater.inflate(R.layout.member_item, parent, false);
 				holder = new ViewHolder();
-				holder.imageView = (AsyncImageView) convertView.findViewById(R.id.async_image);
-				holder.imageView.setImageProcessor(this);
+				holder.imageView = (ImageView) convertView.findViewById(R.id.photo);
 				holder.fullnameView = (TextView) convertView.findViewById(R.id.fullname);
-				holder.jobPositionView = (TextView) convertView.findViewById(R.id.jobposition);
+				holder.memberFonctionView = (TextView) convertView.findViewById(R.id.memberFonction);
 				convertView.setTag(holder);
 			}
 			else {
@@ -114,13 +128,12 @@ public class MembersAdapter extends AsyncImageAdapter {
 
 			// Set the image URL which will be loaded
 			if (speaker.photoUrl != null && speaker.photoUrl.length() > 0) {
-				holder.imageView.setUrl(speaker.photoUrl);
+				imgLoader.displayImage(speaker.photoUrl, activity, holder.imageView, true);
 			}
-			holder.imageView.setPaused(false);
 			// Set the fullname
 			holder.fullnameView.setText(speaker.fullName);
 			// Set the job position
-			holder.jobPositionView.setText(speaker.activity + " - " + speaker.company);
+			holder.memberFonctionView.setText(speaker.memberFct);
 			return convertView;
 		}
 		return null;

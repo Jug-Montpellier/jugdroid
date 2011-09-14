@@ -1,19 +1,14 @@
 package org.jug.montpellier.app.jugdroid.ui;
 
-import greendroid.app.GDActivity;
-import greendroid.graphics.drawable.ActionBarDrawable;
-import greendroid.widget.ActionBar;
-import greendroid.widget.ActionBarItem;
-import greendroid.widget.LoaderActionBarItem;
-import greendroid.widget.NormalActionBarItem;
-
 import org.jug.montpellier.app.jugdroid.R;
-import org.jug.montpellier.app.jugdroid.widget.NewInfoButton;
-import org.jug.montpellier.app.jugdroid.widget.NewInfoProvider;
-import org.jug.montpellier.app.jugdroid.widget.RandomNewInfoProvider;
+import org.jug.montpellier.app.jugdroid.ui.widget.NewInfoButton;
+import org.jug.montpellier.app.jugdroid.ui.widget.NewInfoProvider;
+import org.jug.montpellier.app.jugdroid.ui.widget.RandomNewInfoProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.ActionBar;
+import android.support.v4.app.FragmentActivity;
 
 import com.googlecode.androidannotations.annotations.BeforeCreate;
 import com.googlecode.androidannotations.annotations.Click;
@@ -25,8 +20,8 @@ import com.googlecode.androidannotations.annotations.ViewById;
  * 
  * @author etaix
  */
-@EActivity
-public class DashboardActivity extends GDActivity {
+@EActivity(R.layout.activity_home)
+public class DashboardActivity extends FragmentActivity {
 
 	// Define Dashboard buttons
 	@ViewById(R.id.home_btn_schedule)
@@ -44,45 +39,37 @@ public class DashboardActivity extends GDActivity {
 	// The NewInfoProvider implementation
 	private NewInfoProvider infoProvider = new RandomNewInfoProvider();
 	
+
 	/**
-	 * Must be override to set the ActionBar.Type when used with AndroidAnnotations.
-	 * Overriding GDApplication.getHomeClass() method is useless
+	 * Hack de Fragment API issue with AndroidAnnotations
 	 */
-	public DashboardActivity() {
-		super(ActionBar.Type.Dashboard);
-	}
-	
+	@BeforeCreate
+	public void onBeforeCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+        // Don't call super.onCreate() here.
+
+		// Add action items
+		final ActionBar ab = getSupportActionBar();
+		// Set defaults for logo & home up
+		ab.setDisplayHomeAsUpEnabled(false);
+		ab.setDisplayUseLogoEnabled(false);		
+
 		// Inject the NewInfoProvider: may be we can do injection with RoboGuice ?
 		schedule.setInfoProvider(infoProvider);
 		sessions.setInfoProvider(infoProvider);
 		partners.setInfoProvider(infoProvider);
 		members.setInfoProvider(infoProvider);
 		news.setInfoProvider(infoProvider);
-		// Add action items
-		addActionBarItem(getActionBar()
-                .newActionBarItem(LoaderActionBarItem.class)
-                .setDrawable(new ActionBarDrawable(getResources(), com.cyrilmottier.android.greendroid.R.drawable.gd_action_bar_refresh)), R.id.action_bar_refresh);		
-		addActionBarItem(getActionBar()
-	                .newActionBarItem(NormalActionBarItem.class)
-	                .setDrawable(new ActionBarDrawable(getResources(), com.cyrilmottier.android.greendroid.R.drawable.gd_action_bar_info)), R.id.action_bar_info);		
-	}
-
-	/**
-	 * Set the content view as we can't set it using EActivity annotation
-	 * because GreenDroid doesn't use the conventionnal #setContentView method
-	 */
-	@BeforeCreate
-	public void onBeforeCreate() {
-		setActionBarContentView(R.layout.activity_home);
 	}
 
 	//======  Click handlers for Dashboard buttons  ======
 	@Click(R.id.home_btn_schedule)
 	void scheduleClicked() {
-		startActivity(new Intent(this, EventsActivity_.class));
+//		startActivity(new Intent(this, EventsActivity_.class));
 	}
 
 	@Click(R.id.home_btn_sessions)
@@ -110,17 +97,16 @@ public class DashboardActivity extends GDActivity {
 	/**
 	 * Handle click on action items
 	 */
-    @Override
-    public boolean onHandleActionBarItemClick(ActionBarItem item, int position) {
-        switch (item.getItemId()) {
-            case R.id.action_bar_refresh:
-                return true;
-            case R.id.action_bar_info:
-        		startActivity(new Intent(this, InfoTabActivity.class));
-                return true;
-            default:
-                return super.onHandleActionBarItemClick(item, position);
-        }
-    }
+//    public boolean onHandleActionBarItemClick(ActionBarItem item, int position) {
+//        switch (item.getItemId()) {
+//            case R.id.action_bar_refresh:
+//                return true;
+//            case R.id.action_bar_info:
+//        		startActivity(new Intent(this, InfoTabActivity.class));
+//                return true;
+//            default:
+//                return super.onHandleActionBarItemClick(item, position);
+//        }
+//    }
 
 }

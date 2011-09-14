@@ -2,17 +2,21 @@
  * 
  */
 package org.jug.montpellier.app.jugdroid.core;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.codehaus.jackson.JsonFactory;
+import org.codehaus.jackson.JsonParser;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.json.JSONException;
 
 import android.util.Log;
 
@@ -24,7 +28,9 @@ import android.util.Log;
  */
 public class RestClient {
 
-	private static final String HOST = "http://192.168.1.35:9000";
+//	public final static String HOST = "http://jared.homedns.org:9000";
+	public final static String HOST = "http://192.168.1.35:9000";
+
 	
 	/**
 	 * To convert the InputStream to String we use the BufferedReader.readLine()
@@ -40,13 +46,16 @@ public class RestClient {
 			while ((line = reader.readLine()) != null) {
 				sb.append(line + "\n");
 			}
-		} catch (IOException e) {
-			Log.e("JugDroid","Error while converting JSON stream to response");
-		} finally {
+		}
+		catch (IOException e) {
+			Log.e("JugDroid", "Error while converting JSON stream to response");
+		}
+		finally {
 			try {
 				is.close();
-			} catch (IOException e) {
-				Log.e("JugDroid","Error while closing JSON stream");
+			}
+			catch (IOException e) {
+				Log.e("JugDroid", "Error while closing JSON stream");
 			}
 		}
 		return sb.toString();
@@ -85,10 +94,45 @@ public class RestClient {
 				return result;
 			}
 			return null;
-		} catch (Exception e) {
+		}
+		catch (Exception e) {
 			Log.e("JugDroid", "Error while requesting REST service", e);
 			throw e;
 		}
 	}
+
+	/**
+	 * This method uses the REST service provided as "urlP" parameter and try to
+	 * bind the JSON response into a arraylist of classP instance<br/>
+	 * <br/>
+	 * 
+	 * @param classP 
+	 * @param urlP
+	 * @return
+	 * @throws Exception
+	 */
+	@SuppressWarnings("unchecked")
+	public static <T> ArrayList<T> getList(Class classP, String urlP) throws BackendException {
+		try {
+			String jsonStr = RestClient.send(urlP);
+			if (jsonStr != null) {
+				JsonFactory jsonFactory = new JsonFactory();
+				JsonParser jp = jsonFactory.createJsonParser(jsonStr);
+				ObjectMapper objectMapper = new ObjectMapper();
+				// Parse response
+				return objectMapper.readValue(jp, new ArrayListTypeReference(classP));
+			}
+			return null;
+		}
+		catch (JSONException e) {
+			Log.e("JugDroid", "Error while parsing JSON response", e);
+			throw new BackendException();
+		}
+		catch (Exception e) {
+			Log.e("JugDroid", "Error while requesting the backend", e);
+			throw new BackendException();
+		}
+	}
+
 
 }

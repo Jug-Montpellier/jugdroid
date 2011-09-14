@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <fragment
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:name="org.jug.montpellier.app.jugdroid.MemberListFragment"
+    android:name="org.jug.montpellier.app.jugdroid.ui.fragment.MemberListFragment"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:id="@+id/member_list_fragment">

@@ -3,15 +3,9 @@
  */
 package org.jug.montpellier.app.jugdroid.ui;
 
-import greendroid.app.GDListActivity;
-import greendroid.graphics.drawable.ActionBarDrawable;
-import greendroid.widget.ActionBarItem;
-import greendroid.widget.LoaderActionBarItem;
-
-import org.jug.montpellier.app.jugdroid.R;
-
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -20,17 +14,17 @@ import android.widget.Toast;
  * 
  * @author etaix
  */
-public abstract class JugListActivity extends GDListActivity {
+public abstract class JugListActivity extends FragmentActivity {
 
-	private LoaderActionBarItem loaderItem;
+//	private LoaderActionBarItem loaderItem;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		// Add the refresh action item
-		loaderItem = (LoaderActionBarItem) getActionBar().newActionBarItem(LoaderActionBarItem.class);
-		addActionBarItem(loaderItem.setDrawable(new ActionBarDrawable(getResources(),
-				com.cyrilmottier.android.greendroid.R.drawable.gd_action_bar_refresh)), R.id.action_bar_refresh);
+//		// Add the refresh action item
+//		loaderItem = (LoaderActionBarItem) getActionBar().newActionBarItem(LoaderActionBarItem.class);
+//		addActionBarItem(loaderItem.setDrawable(new ActionBarDrawable(getResources(),
+//				com.cyrilmottier.android.greendroid.R.drawable.gd_action_bar_refresh)), R.id.action_bar_refresh);
 	}
 	
 	/**
@@ -58,37 +52,37 @@ public abstract class JugListActivity extends GDListActivity {
 		});
 	}
 
-	@Override
-	public final boolean onHandleActionBarItemClick(ActionBarItem item, int position) {
-		switch (item.getItemId()) {
-		case R.id.action_bar_refresh:
-			refresh();
-			return true;
-		default:
-			return onActionBarItemClick(item, position);
-		}
-	}
-	
-	/**
-	 * This method can to be overidden when an activity needs to handle ActionBarItem click 
-	 * @param item
-	 * @param position
-	 * @return
-	 */
-	public boolean onActionBarItemClick(ActionBarItem item, int position) {	
-		return false;
-	}
-	
-	/**
-	 * This method must be overriden to refresh data 
-	 */
-	public abstract void refresh();		
-	
-	/**
-	 * Display or hide the infinite progressbar. This method can only be called from the UI thread.
-	 * @param loading
-	 */
-	public void setLoading(boolean loading) {
-		loaderItem.setLoading(loading);
-	}
+//	@Override
+//	public final boolean onHandleActionBarItemClick(ActionBarItem item, int position) {
+//		switch (item.getItemId()) {
+//		case R.id.action_bar_refresh:
+//			refresh();
+//			return true;
+//		default:
+//			return onActionBarItemClick(item, position);
+//		}
+//	}
+//	
+//	/**
+//	 * This method can to be overidden when an activity needs to handle ActionBarItem click 
+//	 * @param item
+//	 * @param position
+//	 * @return
+//	 */
+//	public boolean onActionBarItemClick(ActionBarItem item, int position) {	
+//		return false;
+//	}
+//	
+//	/**
+//	 * This method must be overriden to refresh data 
+//	 */
+//	public abstract void refresh();		
+//	
+//	/**
+//	 * Display or hide the infinite progressbar. This method can only be called from the UI thread.
+//	 * @param loading
+//	 */
+//	public void setLoading(boolean loading) {
+//		loaderItem.setLoading(loading);
+//	}
 }

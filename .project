@@ -32,14 +32,9 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>GreenDroid_src</name>
+			<name>sherlock_src</name>
 			<type>2</type>
-			<locationURI>_android_GreenDroid_612cb559/src</locationURI>
-		</link>
-		<link>
-			<name>viewflow_src</name>
-			<type>2</type>
-			<locationURI>_android_viewflow_474f6153/src</locationURI>
+			<locationURI>_android_sherlock_da81eded/src</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

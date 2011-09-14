@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <style name="Theme.JugDroid" parent="Theme.Sherlock">
+      <item name="selectableItemBackground">@drawable/ad_selectable_background</item>
+      <item name="android:windowBackground">@color/black</item>  
+      <item name="android:textColorLink">@color/white</item>  
+      <item name="actionBarStyle">@style/Widget.JugDroid.ActionBar</item>
+    </style>
+</resources>

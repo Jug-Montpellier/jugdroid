@@ -13,11 +13,10 @@ import org.json.JSONException;
 import org.jug.montpellier.app.jugdroid.R;
 import org.jug.montpellier.app.jugdroid.core.RestClient;
 import org.jug.montpellier.app.jugdroid.models.Speaker;
-import org.taptwo.android.widget.ViewFlow;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.googlecode.androidannotations.annotations.Background;
 import com.googlecode.androidannotations.annotations.BeforeCreate;
@@ -31,10 +30,10 @@ import com.googlecode.androidannotations.annotations.ViewById;
  * @author etaix
  */
 @EActivity
-public class SessionDetailActivity extends JugActivity {
+public class SessionDetailActivity extends FragmentActivity {
 
-	@ViewById(R.id.membersflow)
-	ViewFlow viewFlow;
+//	@ViewById(R.id.membersflow)
+//	ViewFlow viewFlow;
 	// Members adapter
 //	private MembersAdapterOld adapter;
 
@@ -48,7 +47,7 @@ public class SessionDetailActivity extends JugActivity {
 //		indicator.setTitleProvider(adapter);
 //		viewFlow.setFlowIndicator(indicator);
 		// Update members list
-		setLoading(true);
+//		setLoading(true);
 		updateMembers();
 
 	}
@@ -59,7 +58,7 @@ public class SessionDetailActivity extends JugActivity {
 	 */
 	@BeforeCreate
 	public void onBeforeCreate() {
-		setActionBarContentView(R.layout.activity_members2);
+		setContentView(R.layout.activity_session);
 	}
 
 	/**
@@ -81,12 +80,12 @@ public class SessionDetailActivity extends JugActivity {
 			}
 		}
 		catch (JSONException e) {
-			toastMessage("Error while retrieving JUG members", Toast.LENGTH_LONG);
+//			toastMessage("Error while retrieving JUG members", Toast.LENGTH_LONG);
 			Log.e("JugDroid", "Error while parsing JSON response", e);
 		}
 		catch (Exception e) {
 			// Other exceptions have already been logged
-			toastMessage("Error while retrieving JUG members. Try again later.", Toast.LENGTH_LONG);
+//			toastMessage("Error while retrieving JUG members. Try again later.", Toast.LENGTH_LONG);
 		}
 		finally {
 			updateMembersUI(speakers);			
@@ -97,11 +96,11 @@ public class SessionDetailActivity extends JugActivity {
 	/* (non-Javadoc)
 	 * @see org.jug.montpellier.app.jugdroid.ui.JugActivity#refresh()
 	 */
-	@Override
-	public void refresh() {
-		setLoading(true);
-		updateMembers();
-	}
+//	@Override
+//	public void refresh() {
+//		setLoading(true);
+//		updateMembers();
+//	}
 
 	/**
 	 * Update members list UI. Can't use a ArrayList<Speaker> as
@@ -111,6 +110,6 @@ public class SessionDetailActivity extends JugActivity {
 	@UiThread
 	void updateMembersUI(ArrayList speakers) {
 //		adapter.setMembers(speakers);
-		setLoading(false);
+//		setLoading(false);
 	}
 }

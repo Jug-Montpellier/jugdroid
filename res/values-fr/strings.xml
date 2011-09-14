@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Jug Montpellier</string>    
+    <string name="app_name">JugDroid</string>    
     <string name="crash_toast_text">Ooooops ! Je me suis crashé lamentablement, mais j\'ai eu le temps d\'envoyer un rapport qui aidera mon développeur à corriger ce problème !</string>
 	<string name="error_getting_information">Ooooops ! Je ne peux récupérer les informations. Merci d\'essayer plus tard.</string>
     <string name="partners">Partenaires</string>    
