@@ -2,10 +2,17 @@ package org.jug.montpellier.app.jugdroid.ui.fragment;
 
 
 import org.jug.montpellier.app.jugdroid.R;
+import org.jug.montpellier.app.jugdroid.ui.MemberDetailActivity;
+import org.jug.montpellier.app.jugdroid.ui.MemberDetailActivity_;
+import org.jug.montpellier.app.jugdroid.ui.PreferencesActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.Menu;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -16,17 +23,8 @@ public class DashboardFragment extends Fragment {
      */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        if (container == null) {
-            // We have different layouts, and in one of them this
-            // fragment's containing frame doesn't exist.  The fragment
-            // may still be created from its saved state, but there is
-            // no reason to try to create its view hierarchy because it
-            // won't be displayed.  Note this is not needed -- we could
-            // just run the code below, where we would create and return
-            // the view hierarchy; it would just never be used.
-//            return null;
-//        }
         View view = inflater.inflate(R.layout.fragment_dashboard, null, false);
         return view;
     }
+
 }

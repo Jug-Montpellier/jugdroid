@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+	<PreferenceCategory android:title="@string/pref_category_notification">
+	<CheckBoxPreference android:key="@string/pref_notification_key"
+		android:title="@string/pref_notification_allowed" android:summary="@string/pref_notification_allowed_desc"></CheckBoxPreference>
+	<CheckBoxPreference android:summary="@string/pref_vibrator_allowed_desc" android:title="@string/pref_vibrator_allowed" android:key="@string/pref_vibrator_key" android:dependency="@string/pref_notification_key"></CheckBoxPreference>
+	<RingtonePreference android:key="@string/pref_ring_key" android:summary="@string/pref_ring_desc" android:title="@string/pref_ring" android:showSilent="true" android:showDefault="true" android:ringtoneType="notification" android:dependency="@string/pref_notification_key"></RingtonePreference>
+	</PreferenceCategory>
+
+</PreferenceScreen>

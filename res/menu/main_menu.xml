@@ -3,4 +3,6 @@
 	<!-- icon -->
 	<item android:id="@+id/menu_refresh" android:showAsAction="ifRoom"
 		android:title="@string/action_label_refresh" android:icon="@drawable/ic_menu_refresh_holo_light" />
+	<item android:id="@+id/menu_options" android:showAsAction="ifRoom"
+		android:title="@string/action_label_refresh" android:icon="@drawable/ic_menu_options" />
 </menu>

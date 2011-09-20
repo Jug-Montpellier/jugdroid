@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ActionBar;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.Menu;
+import android.support.v4.view.MenuItem;
 
 import com.googlecode.androidannotations.annotations.BeforeCreate;
 import com.googlecode.androidannotations.annotations.Click;
@@ -57,7 +59,6 @@ public class DashboardActivity extends FragmentActivity {
 		// Set defaults for logo & home up
 		ab.setDisplayHomeAsUpEnabled(false);
 		ab.setDisplayUseLogoEnabled(false);		
-
 		// Inject the NewInfoProvider: may be we can do injection with RoboGuice ?
 		schedule.setInfoProvider(infoProvider);
 		sessions.setInfoProvider(infoProvider);
@@ -66,6 +67,38 @@ public class DashboardActivity extends FragmentActivity {
 		news.setInfoProvider(infoProvider);
 	}
 
+    
+	/**
+	 * Add specific fragment's menu
+	 * 
+	 * @param menu
+	 * @param inflater
+	 */
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.main_menu, menu);
+		return super.onCreateOptionsMenu(menu);
+	}
+	
+	/**
+	 * Handle menu items click
+	 * 
+	 * @param item
+	 * @return
+	 */
+	@Override      
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			case R.id.menu_refresh:
+				break;
+			case R.id.menu_options:
+				Intent intent = new Intent(this, PreferencesActivity.class);
+				startActivity(intent);
+				break;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+	
 	//======  Click handlers for Dashboard buttons  ======
 	@Click(R.id.home_btn_schedule)
 	void scheduleClicked() {

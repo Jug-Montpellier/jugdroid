@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.util.AttributeSet;
 import android.widget.ImageView;
 
 /**
@@ -19,6 +20,14 @@ public class RoundedImageView extends ImageView {
 
 	public RoundedImageView(Context context) {
 		super(context);
+	}
+
+	public RoundedImageView(Context context, AttributeSet attrs) {
+		super(context, attrs);
+	}
+	
+	public RoundedImageView(Context context, AttributeSet attrs, int defStyle) {
+		super(context, attrs, defStyle);
 	}
 
 	@Override

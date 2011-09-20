@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_notification_key">notify</string>       
+    <string name="pref_vibrator_key">vibrator</string>       
+    <string name="pref_ring_key">ring</string> 
+</resources>       
