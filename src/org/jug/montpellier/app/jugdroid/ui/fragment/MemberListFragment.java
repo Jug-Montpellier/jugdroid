@@ -21,6 +21,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v4.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ActionBar.Tab;
 import android.support.v4.view.Menu;
@@ -186,7 +187,12 @@ public class MemberListFragment extends Fragment implements OnItemClickListener,
 				// Execute a transaction, replacing any existing fragment with this
 				// one inside the frame.
 				Animation.fadeOut(detailContainer, ANIMATION_DELAY);
-				getFragmentManager().beginTransaction().replace(R.id.member_detail_frame, fragment).commit();
+				// Bullet proof : fragment manager may be null if the user click the
+				// back button before data have been received
+				FragmentManager mgr = getFragmentManager();
+				if (mgr != null) {
+					mgr.beginTransaction().replace(R.id.member_detail_frame, fragment).commit();
+				}
 				Animation.fadeIn(detailContainer, ANIMATION_DELAY);
 				positionShown = currentPosition;
 			}
