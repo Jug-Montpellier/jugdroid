@@ -16,6 +16,7 @@ import org.jug.montpellier.app.jugdroid.ui.adapter.MembersAdapter;
 import org.jug.montpellier.app.jugdroid.ui.adapter.MembersLightAdapter;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v4.app.ActionBar;
@@ -39,6 +40,7 @@ import android.widget.AdapterView.OnItemClickListener;
  */
 public class MemberListFragment extends Fragment implements OnItemClickListener, ActionBar.TabListener {
 
+	private static final int ANIMATION_DELAY = 1000;
 	private static final String SPEAKER_TAG = "SPEAKER_TAG";
 	private static final String MEMBER_TAG = "MEMBER_TAG";
 
@@ -68,8 +70,10 @@ public class MemberListFragment extends Fragment implements OnItemClickListener,
 	 */
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		selfContainer = container;		
+		selfContainer = container;
 		listView = new ListView(getActivity());
+		listView.setDivider(new ColorDrawable(getActivity().getResources().getColor(R.color.medium_gray)));
+		listView.setDividerHeight(1);
 		listView.setBackgroundColor(0);
 		listView.setCacheColorHint(0);
 		// Set up that this fragment has a menu (onCreateOptionsMenu will be called)
@@ -181,9 +185,9 @@ public class MemberListFragment extends Fragment implements OnItemClickListener,
 				MemberDetailsFragment fragment = MemberDetailsFragment.newInstance(speaker);
 				// Execute a transaction, replacing any existing fragment with this
 				// one inside the frame.
-				Animation.alpha(detailContainer, 1.0f, 0.0f, 3000, 0);
-				getFragmentManager().beginTransaction().replace(R.id.member_detail_frame, fragment).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
-				Animation.alpha(detailContainer, 0.0f, 1.0f, 3000, 0);
+				Animation.fadeOut(detailContainer, ANIMATION_DELAY);
+				getFragmentManager().beginTransaction().replace(R.id.member_detail_frame, fragment).commit();
+				Animation.fadeIn(detailContainer, ANIMATION_DELAY);
 				positionShown = currentPosition;
 			}
 		}
@@ -201,7 +205,8 @@ public class MemberListFragment extends Fragment implements OnItemClickListener,
 	 * @see org.jug.montpellier.app.jugdroid.ui.JugActivity#refresh()
 	 */
 	public void refresh() {
-		// If currentTab is not available, don't refresh: data will be refreshed soon (onTabSelected event)
+		// If currentTab is not available, don't refresh: data will be refreshed
+		// soon (onTabSelected event)
 		if (currentTab != null) {
 			// According to the selected tab's tag, update members
 			if (currentTab.getTag().equals(MEMBER_TAG)) {
@@ -215,10 +220,12 @@ public class MemberListFragment extends Fragment implements OnItemClickListener,
 			// initialized (in a dimension point of view). So don't rotate it: a
 			// FragmentTransaction is taking place
 			if (selfContainer.getWidth() != 0) {
-				Animation.fadeOutAndRotate(selfContainer, 1000);
+				Animation.fadeOutAndRotate(selfContainer, ANIMATION_DELAY);
+				Animation.fadeOut(detailContainer, ANIMATION_DELAY);
 			}
 			else {
-				Animation.fadeOut(selfContainer, 10);				
+				Animation.fadeOut(selfContainer, 10);
+				Animation.fadeOut(detailContainer, 10);
 			}
 		}
 	}
@@ -236,6 +243,7 @@ public class MemberListFragment extends Fragment implements OnItemClickListener,
 	 */
 	@Override
 	public void onTabSelected(Tab tab, FragmentTransaction ft) {
+		Animation.fadeOut(detailContainer, ANIMATION_DELAY);
 		currentTab = tab;
 		refresh();
 	}
@@ -251,10 +259,13 @@ public class MemberListFragment extends Fragment implements OnItemClickListener,
 				listAdapter.setMembers(resultP);
 				// Hide progress indicator
 				refreshItem.setActionView(null);
-				Animation.fadeIn(selfContainer, 500);
+				Animation.fadeIn(selfContainer, ANIMATION_DELAY);
 				// Shows again the detail if we are in dual-mode
 				if (detailFrame) {
-					showDetails(currentPosition);
+					// First reset current position
+					positionShown = -1;
+					// And show the first position
+					showDetails(0);
 				}
 			}
 		}.execute(getActivity().getText(R.string.error_getting_information).toString());
@@ -271,10 +282,13 @@ public class MemberListFragment extends Fragment implements OnItemClickListener,
 				listAdapter.setMembers(resultP);
 				// Hide progress indicator
 				refreshItem.setActionView(null);
-				Animation.fadeIn(selfContainer, 500);
+				Animation.fadeIn(selfContainer, ANIMATION_DELAY);
 				// Shows again the detail if we are in dual-mode
 				if (detailFrame) {
-					showDetails(currentPosition);
+					// First reset current position
+					positionShown = -1;
+					// And show the first position
+					showDetails(0);
 				}
 			}
 		}.execute(getText(R.string.error_getting_information).toString());

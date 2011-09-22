@@ -49,12 +49,9 @@ public class MembersActivity extends FragmentActivity implements ActionBar.TabLi
   private void create() {
 		MemberListFragment frag = new MemberListFragment();
 		// Execute a transaction, replacing any existing fragment with this one inside the frame.
-//		Animation.alpha(leftContainer, 1.0f, 0.0f, 3000, 0);
 		getSupportFragmentManager().beginTransaction()
 		                    .replace(R.id.members_list_frame, frag)
-//		                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
 		                    .commit();
-//		Animation.alpha(leftContainer, 0.0f, 1.0f, 3000, 0);
   }
 
 	/**

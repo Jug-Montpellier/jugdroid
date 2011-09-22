@@ -103,8 +103,15 @@ public class MemberDetailsFragment extends Fragment {
 			jobPositionView.setText(member.activity);
 			companyURLView.setText(Html.fromHtml("<a href='"+member.companyURL+"'>"+member.company+"</a>"));
 			descView.setText(member.description);
-			personalView.setText(member.personalURL);
-			// Set the image URL which will ne download in the background
+			// Show personnal URL otherwise set view to GONE (invisible + does not take place)
+			if (member.personalURL != null && member.personalURL.length() > 0) {
+				personalView.setVisibility(View.VISIBLE);
+				personalView.setText(member.personalURL);				
+			}
+			else {
+				personalView.setVisibility(View.GONE);
+			}
+			// Set the image URL which will be download in the background
 			if (member.photoUrl != null && member.photoUrl.length() > 0) {
 				imgLoader.displayImage(member.photoUrl, activity, photoView, true);
 			}
