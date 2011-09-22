@@ -12,50 +12,52 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 /**
- * Define a speaker or a JUG member
+ * Define a speaker or a JUG member. PlayJug has only one model for 'real'
+ * speaker (who is a person who talk about a technology) and a member.<br/>
+ * So in Jugdroid we use the same model => a Speaker is used for 'real' Speaker and Member
+ * 
  * @author etaix
  */
 @SuppressWarnings("serial")
-@JsonIgnoreProperties(ignoreUnknown=true)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Speaker implements Serializable, Parcelable {
 
 	// Job position
-	@JsonProperty(value="activity")
+	@JsonProperty(value = "activity")
 	public String activity;
 	// Actual company
-	@JsonProperty(value="company")
+	@JsonProperty(value = "company")
 	public String company;
 	// Firstname + name
-	@JsonProperty(value="fullName")
+	@JsonProperty(value = "fullName")
 	public String fullName;
 
-	
 	// The company Web site
-	@JsonProperty(value="url")
+	@JsonProperty(value = "url")
 	public String companyURL;
 	// Personnal Web site
-	@JsonProperty(value="personalUrl")
+	@JsonProperty(value = "personalUrl")
 	public String personalURL;
 	// Description / Bio
-	@JsonProperty(value="description")
+	@JsonProperty(value = "description")
 	public String description;
 	// The photo URL
-	@JsonProperty(value="photoUrl")
+	@JsonProperty(value = "photoUrl")
 	public String photoUrl = null;
 	// The member fonction
-	@JsonProperty(value="memberFct")
+	@JsonProperty(value = "memberFct")
 	public String memberFct;
-	
+
 	/**
 	 * Default constructor which is not called from Parcel
 	 */
-	public Speaker() {		
+	public Speaker() {
 	}
-	
+
 	public Speaker(Parcel in) {
 		readFromParcel(in);
 	}
-	
+
 	@Override
 	public int describeContents() {
 		return 0;
@@ -74,13 +76,13 @@ public class Speaker implements Serializable, Parcelable {
 		dest.writeString(description);
 		dest.writeString(photoUrl);
 	}
- 
+
 	/**
-	 *
-	 * Called from the constructor to create this
-	 * object from a parcel.
-	 *
-	 * @param in parcel from which to re-create object
+	 * 
+	 * Called from the constructor to create this object from a parcel.
+	 * 
+	 * @param in
+	 *          parcel from which to re-create object
 	 */
 	private void readFromParcel(Parcel in) {
 		activity = in.readString();
@@ -90,29 +92,27 @@ public class Speaker implements Serializable, Parcelable {
 		personalURL = in.readString();
 		description = in.readString();
 		photoUrl = in.readString();
- 	}
-	
-	/**
-    *
-    * This field is needed for Android to be able to
-    * create new objects, individually or as arrays.
-    *
-    * This also means that you can use use the default
-    * constructor to create the object and use another
-    * method to hyrdate it as necessary.
-    *
-    * I just find it easier to use the constructor.
-    * It makes sense for the way my brain thinks ;-)
-    *
-    */
-   public static final Parcelable.Creator<Speaker> CREATOR =
-   	new Parcelable.Creator<Speaker>() {
-           public Speaker createFromParcel(Parcel in) {
-               return new Speaker(in);
-           }
+	}
 
-           public Speaker[] newArray(int size) {
-               return new Speaker[size];
-           }
-       };
+	/**
+	 * 
+	 * This field is needed for Android to be able to create new objects,
+	 * individually or as arrays.
+	 * 
+	 * This also means that you can use use the default constructor to create the
+	 * object and use another method to hyrdate it as necessary.
+	 * 
+	 * I just find it easier to use the constructor. It makes sense for the way my
+	 * brain thinks ;-)
+	 * 
+	 */
+	public static final Parcelable.Creator<Speaker> CREATOR = new Parcelable.Creator<Speaker>() {
+		public Speaker createFromParcel(Parcel in) {
+			return new Speaker(in);
+		}
+
+		public Speaker[] newArray(int size) {
+			return new Speaker[size];
+		}
+	};
 }

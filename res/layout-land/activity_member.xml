@@ -3,7 +3,7 @@
     android:orientation="horizontal"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    >
+    >    
     <fragment
         android:name="org.jug.montpellier.app.jugdroid.ui.fragment.MemberListFragment"
         android:layout_width="0px"

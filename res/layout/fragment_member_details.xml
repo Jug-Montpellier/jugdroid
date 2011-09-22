@@ -5,7 +5,7 @@
 	android:layout_height="wrap_content">
 	<LinearLayout android:layout_width="fill_parent"
 		android:layout_height="wrap_content" android:orientation="horizontal"
-		android:padding="8dp">
+		android:padding="8dp" android:background="@drawable/detailheader_rounded_rect" android:layout_marginTop="10dip" android:layout_marginLeft="5dip" android:layout_marginRight="5dip">
 	<org.jug.montpellier.app.jugdroid.ui.widget.RoundedImageView
 		android:id="@+id/photo" android:maxWidth="@dimen/thumbnail_size_width"
 		android:maxHeight="@dimen/thumbnail_size_height"
@@ -16,16 +16,16 @@
 			<TextView android:paddingLeft="10dp" android:gravity="center_vertical|left"
 				android:layout_height="wrap_content" android:layout_width="fill_parent"
 				android:id="@+id/fullname" android:textAppearance="?android:attr/textAppearanceLarge"
-				 android:text="Eric Taix" android:textStyle="bold"/>
+				 android:text="Eric Taix" android:textStyle="bold" android:textColor="@color/medium_gray"/>
 			<TextView android:layout_width="wrap_content"
 				android:layout_height="wrap_content" android:paddingLeft="10dip"
 				android:id="@+id/personalURL" 
-				android:autoLink="web" android:textAppearance="?android:attr/textAppearanceMedium" android:text="myURL"/>
-			<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:autoLink="web|email" android:gravity="center_vertical|left" android:text="Job position + company" android:textAppearance="?android:attr/textAppearanceMedium" android:id="@+id/jobposition" android:paddingLeft="10dip" android:textColor="@color/green"></TextView>
-			<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:autoLink="web" android:textAppearance="?android:attr/textAppearanceMedium" android:id="@+id/companyURL" android:paddingLeft="10dip" android:text="Company URL"></TextView>
+				android:autoLink="web" android:textAppearance="?android:attr/textAppearanceMedium" android:text="myURL" android:textColor="@color/green" android:textColorLink="@color/green"/>
+			<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:autoLink="web|email" android:gravity="center_vertical|left" android:text="Job position + company" android:textAppearance="?android:attr/textAppearanceMedium" android:id="@+id/jobposition" android:paddingLeft="10dip" android:textColor="@color/medium_gray"></TextView>
+			<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:autoLink="web" android:textAppearance="?android:attr/textAppearanceMedium" android:id="@+id/companyURL" android:paddingLeft="10dip" android:text="Company URL" android:textColor="@color/green" android:textColorLink="@color/green"></TextView>
 		</LinearLayout>
 	</LinearLayout>
-	<ScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/scrollView1">
-		<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingRight="10dip" android:autoLink="web|email" android:textAppearance="?android:attr/textAppearanceSmall" android:id="@+id/description" android:paddingLeft="10dip" android:text="Description"></TextView>
+	<ScrollView android:layout_width="match_parent" android:id="@+id/scrollView1" android:layout_height="fill_parent" android:layout_marginRight="5dip" android:layout_marginTop="10dip" android:layout_marginBottom="10dip" android:layout_marginLeft="5dip">
+		<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:autoLink="web|email" android:id="@+id/description" android:background="@drawable/detaildescription_rounded_rect" android:textColor="@color/white" android:textAppearance="?android:attr/textAppearanceMedium" android:padding="10dip" android:text="Lorm ipsum dolor sit amet, consectetur adipiscing elit." android:textColorLink="@color/medium_gray"></TextView>
 	</ScrollView>
 </LinearLayout>

@@ -7,18 +7,21 @@ import java.util.ArrayList;
 
 import org.jug.montpellier.app.jugdroid.R;
 import org.jug.montpellier.app.jugdroid.core.tasks.MemberListTask;
+import org.jug.montpellier.app.jugdroid.core.tasks.SpeakerListTask;
 import org.jug.montpellier.app.jugdroid.models.Speaker;
 import org.jug.montpellier.app.jugdroid.ui.Animation;
 import org.jug.montpellier.app.jugdroid.ui.MemberDetailActivity;
 import org.jug.montpellier.app.jugdroid.ui.MemberDetailActivity_;
-import org.jug.montpellier.app.jugdroid.ui.adapter.MembersLightAdapter;
 import org.jug.montpellier.app.jugdroid.ui.adapter.MembersAdapter;
+import org.jug.montpellier.app.jugdroid.ui.adapter.MembersLightAdapter;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.support.v4.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.ActionBar.Tab;
 import android.support.v4.view.Menu;
 import android.support.v4.view.MenuItem;
 import android.view.LayoutInflater;
@@ -34,16 +37,19 @@ import android.widget.AdapterView.OnItemClickListener;
  * 
  * @author Eric Taix
  */
-public class MemberListFragment extends Fragment implements OnItemClickListener {
+public class MemberListFragment extends Fragment implements OnItemClickListener, ActionBar.TabListener {
 
-	private static final String SAVE_INDEX = "index";
-	private static final String SAVE_MEMBERS = "members";
-	// Current selected index
-	private int positionChecked = 0;
+	private static final String SPEAKER_TAG = "SPEAKER_TAG";
+	private static final String MEMBER_TAG = "MEMBER_TAG";
+
+	private static final String SAVE_PEOPLE_INDEX = "index";
+	private static final String SAVE_PEOPLE = "people";
+	// Current selected index for memberList
+	private int currentPosition = 0;
 	// Current shown index
 	private int positionShown = -1;
 	// Members adapter
-	private MembersAdapter memberAdapter;
+	private MembersAdapter listAdapter;
 	// A flag to know if we have a the detail frame
 	private boolean detailFrame = false;
 	private ListView listView;
@@ -51,15 +57,21 @@ public class MemberListFragment extends Fragment implements OnItemClickListener 
 	private MenuItem refreshItem;
 	// The details fragment container (useful for animation purpose)
 	private View detailContainer;
-	
-	
+	// The container of this fragment
+	private View selfContainer;
+	// Current actived tab
+	private Tab currentTab;
+
 	/**
 	 * Main method of fragment. Creates the view which will be attached to the
 	 * activity
 	 */
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+		selfContainer = container;		
 		listView = new ListView(getActivity());
+		listView.setBackgroundColor(0);
+		listView.setCacheColorHint(0);
 		// Set up that this fragment has a menu (onCreateOptionsMenu will be called)
 		setHasOptionsMenu(true);
 		return listView;
@@ -73,29 +85,35 @@ public class MemberListFragment extends Fragment implements OnItemClickListener 
 
 		// We are in dual-pane mode
 		if (detailFrame) {
-			memberAdapter = new MembersLightAdapter(getActivity());
+			listAdapter = new MembersLightAdapter(getActivity());
 			// In dual-pane mode, the list view highlights the selected item.
 			listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 			// Make sure our UI is in the correct state.
-			showDetails(positionChecked);
+			showDetails(currentPosition);
 		}
 		else {
-			memberAdapter = new MembersAdapter(getActivity());
+			listAdapter = new MembersAdapter(getActivity());
 		}
-		listView.setAdapter(memberAdapter);
+		listView.setAdapter(listAdapter);
 		listView.setOnItemClickListener(this);
 
 		// Try to restore the last state
 		if (savedInstanceState != null) {
 			// Restore last state for checked position.
-			positionChecked = savedInstanceState.getInt(SAVE_INDEX, 0);
-			ArrayList<Speaker> speakers = savedInstanceState.getParcelableArrayList(SAVE_MEMBERS);
-			memberAdapter.setMembers(speakers);
+			currentPosition = savedInstanceState.getInt(SAVE_PEOPLE_INDEX, 0);
+			ArrayList<Speaker> speakers = savedInstanceState.getParcelableArrayList(SAVE_PEOPLE);
+			listAdapter.setMembers(speakers);
 		}
-		// If this fragment has not been saved then we have to update members
+		// If this fragment has not been saved then we have to update data
 		else {
-			updateMembers();
+			refresh();
 		}
+		// Final setup => tabs (members + speakers). Must be done at the
+		// finalization state as it will generate a onTabSelected event
+		final ActionBar ab = getActivity().getSupportActionBar();
+		currentTab = ab.newTab().setTag(MEMBER_TAG).setText(getText(R.string.members)).setTabListener(this);
+		ab.addTab(currentTab);
+		ab.addTab(ab.newTab().setTag(SPEAKER_TAG).setText(getText(R.string.speakers)).setTabListener(this));
 	}
 
 	/**
@@ -122,7 +140,7 @@ public class MemberListFragment extends Fragment implements OnItemClickListener 
 	public boolean onOptionsItemSelected(android.view.MenuItem item) {
 		switch (item.getItemId()) {
 			case R.id.menu_refresh:
-				updateMembers();
+				refresh();
 				break;
 		}
 		return super.onOptionsItemSelected(item);
@@ -142,64 +160,31 @@ public class MemberListFragment extends Fragment implements OnItemClickListener 
 	@Override
 	public void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
-		outState.putInt(SAVE_INDEX, positionChecked);
-		outState.putParcelableArrayList(SAVE_MEMBERS, memberAdapter.getMembers());
+		outState.putInt(SAVE_PEOPLE_INDEX, currentPosition);
+		outState.putParcelableArrayList(SAVE_PEOPLE, listAdapter.getMembers());
 	}
 
 	/**
-	 * Get JUG members list
-	 */
-	void updateMembers() {
-		// Show progress indicator
-		refreshItem.setActionView(R.layout.refresh_indicator);
-		new MemberListTask(getActivity()) {
-			@Override
-			public void onResult(ArrayList<Speaker> resultP) {
-				memberAdapter.setMembers(resultP);
-				// Hide progress indicator
-				refreshItem.setActionView(null);
-				// Shows again the detail if we are in dual-mode
-				if (detailFrame) {
-					showDetails(positionChecked);
-				}
-			}
-		}.execute(getText(R.string.error_getting_information).toString());
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.jug.montpellier.app.jugdroid.ui.JugActivity#refresh()
-	 */
-	public void refresh() {
-		// setLoading(true);
-		updateMembers();
-	}
-
-	/**
-	 * Shows details of a selected item, either by
-	 * displaying a fragment in-place in the current UI, or starting a whole new
-	 * activity in which it is displayed.
+	 * Shows details of a selected item, either by displaying a fragment in-place
+	 * in the current UI, or starting a whole new activity in which it is
+	 * displayed.
 	 */
 	private void showDetails(int indexP) {
-		positionChecked = indexP;
-		Speaker speaker = (Speaker) memberAdapter.getItem(positionChecked);
+		currentPosition = indexP;
+		Speaker speaker = (Speaker) listAdapter.getItem(currentPosition);
 
 		if (detailFrame) {
 			// We can display everything in-place with fragments, so update
 			// the list to highlight the selected item and show data.
-			listView.setItemChecked(positionChecked, true);
-			if (positionChecked != positionShown && speaker != null) {
+			listView.setItemChecked(currentPosition, true);
+			if (currentPosition != positionShown && speaker != null) {
 				MemberDetailsFragment fragment = MemberDetailsFragment.newInstance(speaker);
 				// Execute a transaction, replacing any existing fragment with this
 				// one inside the frame.
 				Animation.alpha(detailContainer, 1.0f, 0.0f, 3000, 0);
-				getFragmentManager().beginTransaction()
-				                    .replace(R.id.member_detail_frame, fragment)
-				                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-				                    .commit();
+				getFragmentManager().beginTransaction().replace(R.id.member_detail_frame, fragment).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN).commit();
 				Animation.alpha(detailContainer, 0.0f, 1.0f, 3000, 0);
-				positionShown = positionChecked;
+				positionShown = currentPosition;
 			}
 		}
 		// We are not in dual-mode: start a new intent
@@ -209,4 +194,90 @@ public class MemberListFragment extends Fragment implements OnItemClickListener 
 			startActivity(intent);
 		}
 	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see org.jug.montpellier.app.jugdroid.ui.JugActivity#refresh()
+	 */
+	public void refresh() {
+		// If currentTab is not available, don't refresh: data will be refreshed soon (onTabSelected event)
+		if (currentTab != null) {
+			// According to the selected tab's tag, update members
+			if (currentTab.getTag().equals(MEMBER_TAG)) {
+				updateMembers();
+			}
+			// Or speakers
+			else {
+				updateSpeakers();
+			}
+			// If width's value is 0, it means the selfContainer is not yet fully
+			// initialized (in a dimension point of view). So don't rotate it: a
+			// FragmentTransaction is taking place
+			if (selfContainer.getWidth() != 0) {
+				Animation.fadeOutAndRotate(selfContainer, 1000);
+			}
+			else {
+				Animation.fadeOut(selfContainer, 10);				
+			}
+		}
+	}
+
+	@Override
+	public void onTabReselected(Tab tab, FragmentTransaction ft) {
+	}
+
+	@Override
+	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+	}
+
+	/**
+	 * The user clicked on a Tab
+	 */
+	@Override
+	public void onTabSelected(Tab tab, FragmentTransaction ft) {
+		currentTab = tab;
+		refresh();
+	}
+
+	/**
+	 * Get JUG members list
+	 */
+	public void updateMembers() {
+		refreshItem.setActionView(R.layout.refresh_indicator);
+		new MemberListTask(getActivity()) {
+			@Override
+			public void onResult(ArrayList<Speaker> resultP) {
+				listAdapter.setMembers(resultP);
+				// Hide progress indicator
+				refreshItem.setActionView(null);
+				Animation.fadeIn(selfContainer, 500);
+				// Shows again the detail if we are in dual-mode
+				if (detailFrame) {
+					showDetails(currentPosition);
+				}
+			}
+		}.execute(getActivity().getText(R.string.error_getting_information).toString());
+	}
+
+	/**
+	 * Get speakers list
+	 */
+	void updateSpeakers() {
+		refreshItem.setActionView(R.layout.refresh_indicator);
+		new SpeakerListTask(getActivity()) {
+			@Override
+			public void onResult(ArrayList<Speaker> resultP) {
+				listAdapter.setMembers(resultP);
+				// Hide progress indicator
+				refreshItem.setActionView(null);
+				Animation.fadeIn(selfContainer, 500);
+				// Shows again the detail if we are in dual-mode
+				if (detailFrame) {
+					showDetails(currentPosition);
+				}
+			}
+		}.execute(getText(R.string.error_getting_information).toString());
+	}
+
 }

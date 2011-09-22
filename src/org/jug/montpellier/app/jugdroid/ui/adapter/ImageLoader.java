@@ -194,8 +194,8 @@ public class ImageLoader {
 			}
 			if (bitmap != null)
 				imageView.setImageBitmap(bitmap);
-			else
-				imageView.setImageResource(stub_id);
+//			else
+//				imageView.setImageResource(stub_id);
 			if (animate) {
 				Animation.alpha(imageView, 0.0f, 1.0f, 800, 0);
 			}

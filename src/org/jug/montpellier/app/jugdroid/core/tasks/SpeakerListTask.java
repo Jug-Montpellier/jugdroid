@@ -12,19 +12,19 @@ import org.jug.montpellier.app.jugdroid.models.Speaker;
 import android.app.Activity;
 
 /**
- * This task retrieves speakers list
+ * This task retrieves members list
  * @author Eric Taix
  */
-public abstract class MemberListTask extends ToastableTask<Integer, ArrayList<Speaker>> {
+public abstract class SpeakerListTask extends ToastableTask<Integer, ArrayList<Speaker>> {
 
-	public MemberListTask(Activity activityP) {
+	public SpeakerListTask(Activity activityP) {
 		super(activityP);
 	}
 
 	@Override
 	public final ArrayList<Speaker> onExecute() throws BackendException {
 		// Call the REST service
-		ArrayList<Speaker> speakers = RestClient.getList(Speaker.class, "/api/members/all.json");
+		ArrayList<Speaker> speakers = RestClient.getList(Speaker.class, "/api/speakers/all.json");
 		return speakers;
 	}
 

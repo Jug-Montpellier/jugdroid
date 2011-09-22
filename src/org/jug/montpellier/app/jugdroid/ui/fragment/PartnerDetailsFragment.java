@@ -39,10 +39,10 @@ public class PartnerDetailsFragment extends Fragment {
    * Create a new instance of DetailsFragment, initialized to
    * show the text at 'index'.
    */
-  public static PartnerDetailsFragment newInstance(Partner member) {
+  public static PartnerDetailsFragment newInstance(Partner partner) {
       // Supply index input as an argument.
       Bundle args = new Bundle();
-      args.putParcelable(SAVE_PARTNER, member);
+      args.putParcelable(SAVE_PARTNER, partner);
       
       PartnerDetailsFragment fragment = new PartnerDetailsFragment();
       fragment.setArguments(args);
@@ -85,8 +85,8 @@ public class PartnerDetailsFragment extends Fragment {
 	}
 
 	/**
-	 * Show member's informations
-	 * @param member
+	 * Show partner's informations
+	 * @param partner
 	 */
 	private void showPartner(Partner partner) {
 		// If the partner has been set in the intent's extra information 

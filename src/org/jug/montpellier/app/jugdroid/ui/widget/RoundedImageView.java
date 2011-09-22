@@ -58,7 +58,7 @@ public class RoundedImageView extends ImageView {
 	private void initMask() {
 		if (mMask == null) {
 			mMask = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
-			Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+			Paint paint = new Paint();
 			paint.setColor(Color.RED);
 			paint.setStyle(Paint.Style.FILL_AND_STROKE);
 			Canvas c = new Canvas(mMask);

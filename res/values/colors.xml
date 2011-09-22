@@ -2,4 +2,7 @@
     <color name="green">#8fb704</color>
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
-</resources>
+    <color name="black_gray">#29363e</color>
+    <color name="medium_gray">#395261</color>
+    <color name="transparency">#00395261</color>
+</resources> 

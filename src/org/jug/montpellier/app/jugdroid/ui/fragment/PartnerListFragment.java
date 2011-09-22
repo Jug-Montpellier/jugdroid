@@ -11,7 +11,7 @@ import org.jug.montpellier.app.jugdroid.models.Partner;
 import org.jug.montpellier.app.jugdroid.ui.Animation;
 import org.jug.montpellier.app.jugdroid.ui.PartnerDetailActivity;
 import org.jug.montpellier.app.jugdroid.ui.PartnerDetailActivity_;
-import org.jug.montpellier.app.jugdroid.ui.adapter.PartnerLightAdapter;
+import org.jug.montpellier.app.jugdroid.ui.adapter.PartnersLightAdapter;
 import org.jug.montpellier.app.jugdroid.ui.adapter.PartnersAdapter;
 
 import android.content.Intent;
@@ -42,7 +42,7 @@ public class PartnerListFragment extends Fragment implements OnItemClickListener
 	private int positionChecked = 0;
 	// Current shown index
 	private int positionShown = -1;
-	// Members adapter
+	// Partners adapter
 	private PartnersAdapter partnerAdapter;
 	// A flag to know if we have a the detail frame
 	private boolean detailFrame = false;
@@ -73,7 +73,7 @@ public class PartnerListFragment extends Fragment implements OnItemClickListener
 
 		// We are in dual-pane mode
 		if (detailFrame) {
-			partnerAdapter = new PartnerLightAdapter(getActivity());
+			partnerAdapter = new PartnersLightAdapter(getActivity());
 			// In dual-pane mode, the list view highlights the selected item.
 			listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 			// Make sure our UI is in the correct state.
@@ -92,7 +92,7 @@ public class PartnerListFragment extends Fragment implements OnItemClickListener
 			ArrayList<Partner> partners = savedInstanceState.getParcelableArrayList(SAVE_PARTNERS);
 			partnerAdapter.setPartners(partners);
 		}
-		// If this fragment has not been saved then we have to update members
+		// If this fragment has not been saved then we have to update partners
 		else {
 			updatePartners();
 		}
@@ -195,7 +195,7 @@ public class PartnerListFragment extends Fragment implements OnItemClickListener
 				// one inside the frame.
 				Animation.alpha(detailContainer, 1.0f, 0.0f, 3000, 0);
 				getFragmentManager().beginTransaction()
-				                    .replace(R.id.member_detail_frame, fragment)
+				                    .replace(R.id.partner_detail_frame, fragment)
 				                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
 				                    .commit();
 				Animation.alpha(detailContainer, 0.0f, 1.0f, 3000, 0);

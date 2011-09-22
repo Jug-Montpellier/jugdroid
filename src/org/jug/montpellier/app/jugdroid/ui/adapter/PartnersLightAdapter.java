@@ -18,9 +18,9 @@ import android.widget.TextView;
  * 
  * @author Eric Taix
  */
-public class PartnerLightAdapter extends PartnersAdapter {
+public class PartnersLightAdapter extends PartnersAdapter {
 
-	public PartnerLightAdapter(Activity activityP) {
+	public PartnersLightAdapter(Activity activityP) {
 		super(activityP);
 	}
 

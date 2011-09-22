@@ -7,6 +7,8 @@ import android.animation.ObjectAnimator;
 import android.os.Build;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
+import android.view.animation.AnimationSet;
+import android.view.animation.RotateAnimation;
 
 /**
  * Static methods for animation purpose
@@ -33,6 +35,97 @@ public class Animation {
 	}
 
 	/**
+	 * Animate a view with a rotation
+	 * 
+	 * @param view
+	 */
+	public static void rotateLeft(View view, float fromDegrees, float toDegrees, long duration) {
+		if (IS_HONEYCOMB) {
+			ObjectAnimatorRotate.invoke(view, fromDegrees, toDegrees, duration);
+		}
+		else {
+			RotateAnimation rotate = new RotateAnimation(fromDegrees, toDegrees, view.getWidth() / 2.0f, view.getHeight() / 2.0f);
+			rotate.setDuration(duration);
+			view.startAnimation(rotate);
+		}
+	}
+
+	/**
+	 * Animate a view with a fade in transition. At this
+	 * end of the animation, the view will be visible
+	 */
+	public static void fadeIn(final View view, long duration) {
+		AlphaAnimation alpha = new AlphaAnimation(0.0f, 1.0f);
+		alpha.setDuration(duration);
+		alpha.setAnimationListener(new android.view.animation.Animation.AnimationListener() {
+			@Override
+			public void onAnimationEnd(android.view.animation.Animation animation) {
+				view.setVisibility(View.VISIBLE);
+			}
+			@Override
+			public void onAnimationRepeat(android.view.animation.Animation animation) {
+			}
+
+			@Override
+			public void onAnimationStart(android.view.animation.Animation animation) {
+			}
+		});
+		view.startAnimation(alpha);
+	}
+
+	/**
+	 * Animate a view with a fade in transition. At this
+	 * end of the animation, the view will be visible
+	 */
+	public static void fadeOut(final View view, long duration) {
+		AlphaAnimation alpha = new AlphaAnimation(1.0f, 0.0f);
+		alpha.setDuration(duration);
+		alpha.setAnimationListener(new android.view.animation.Animation.AnimationListener() {
+			@Override
+			public void onAnimationEnd(android.view.animation.Animation animation) {
+				view.setVisibility(View.INVISIBLE);
+			}
+			@Override
+			public void onAnimationRepeat(android.view.animation.Animation animation) {
+			}
+
+			@Override
+			public void onAnimationStart(android.view.animation.Animation animation) {
+			}
+		});
+		view.startAnimation(alpha);
+	}
+
+	/**
+	 * Animate a view with a 360 degrees rotation AND a fade out transition. At this
+	 * end of the animation, the view will be invisible
+	 */
+	public static void fadeOutAndRotate(final View view, long duration) {
+		AnimationSet anims = new AnimationSet(true);
+		AlphaAnimation alpha = new AlphaAnimation(1.0f, 0.0f);
+		alpha.setDuration(duration);
+		alpha.setAnimationListener(new android.view.animation.Animation.AnimationListener() {
+			@Override
+			public void onAnimationEnd(android.view.animation.Animation animation) {
+				view.setVisibility(View.INVISIBLE);
+			}
+
+			@Override
+			public void onAnimationRepeat(android.view.animation.Animation animation) {
+			}
+
+			@Override
+			public void onAnimationStart(android.view.animation.Animation animation) {
+			}
+		});
+		anims.addAnimation(alpha);
+		RotateAnimation rotate = new RotateAnimation(0, 360, view.getWidth() / 2.0f, view.getHeight() / 2.0f);
+		rotate.setDuration(duration);
+		anims.addAnimation(rotate);
+		view.startAnimation(anims);
+	}
+
+	/**
 	 * Wrap the ObjectAnimator call by a class ! This allows coding new API 11
 	 * code, without a VerifyError exception: this "invoke" method won't be called
 	 * until the current API version is equal or higher than HONEY_COMB and
@@ -49,4 +142,11 @@ public class Animation {
 			alpha.start();
 		}
 	}
+
+	private static final class ObjectAnimatorRotate {
+		static void invoke(View view, float fromDegrees, float toDegrees, long duration) {
+			ObjectAnimator.ofFloat(view, "rotationY", fromDegrees, toDegrees).setDuration(duration).start();
+		}
+	}
+
 }
