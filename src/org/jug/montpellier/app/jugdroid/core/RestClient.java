@@ -30,6 +30,7 @@ public class RestClient {
 
 //	public final static String HOST = "http://jared.homedns.org:9000";
 	public final static String HOST = "http://192.168.1.35:9000";
+//	public final static String HOST = "http://192.168.6.159:9000";
 
 	
 	/**
