@@ -12,6 +12,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,6 +74,7 @@ public class MemberDetailsFragment extends Fragment {
 		fullNameView = (TextView) view.findViewById(R.id.fullname);
 		jobPositionView = (TextView) view.findViewById(R.id.jobposition);
 		companyURLView = (TextView) view.findViewById(R.id.companyURL);
+		companyURLView.setMovementMethod(LinkMovementMethod.getInstance());
 		descView = (TextView) view.findViewById(R.id.description);
 		personalView = (TextView) view.findViewById(R.id.personalURL);
 		photoView = (RoundedImageView) view.findViewById(R.id.photo);
@@ -94,11 +97,11 @@ public class MemberDetailsFragment extends Fragment {
 	 */
 	private void showMember(Speaker member) {
 		// If the member has been set in the intent's extra information 
-		if (member != null) {
+		if (member != null) { 
 			// Set fullname, job position, company
 			fullNameView.setText(member.fullName);
-			jobPositionView.setText(member.activity+" - "+member.company);
-			companyURLView.setText(member.companyURL);
+			jobPositionView.setText(member.activity);
+			companyURLView.setText(Html.fromHtml("<a href='"+member.companyURL+"'>"+member.company+"</a>"));
 			descView.setText(member.description);
 			personalView.setText(member.personalURL);
 			// Set the image URL which will ne download in the background

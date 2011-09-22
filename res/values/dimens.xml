@@ -9,8 +9,8 @@
     
     <dimen name="thumbnail_size_width">50dip</dimen>
     <dimen name="thumbnail_size_height">50dip</dimen>
-    <dimen name="thumbnail_detail_size_width">100dip</dimen>
-    <dimen name="thumbnail_detail_size_height">100dip</dimen>
+    <dimen name="thumbnail_detail_size_width">70dip</dimen>
+    <dimen name="thumbnail_detail_size_height">70dip</dimen>
     <dimen name="thumbnail_radius">2dp</dimen>
     
     <dimen name="frag_rounding_radius">10dp</dimen>
