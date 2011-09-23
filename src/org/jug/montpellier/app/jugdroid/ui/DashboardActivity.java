@@ -24,16 +24,12 @@ import com.googlecode.androidannotations.annotations.ViewById;
 public class DashboardActivity extends FragmentActivity {
 
 	// Define Dashboard buttons
-	@ViewById(R.id.home_btn_schedule)
-	NewInfoButton schedule;
 	@ViewById(R.id.home_btn_sessions)
 	NewInfoButton sessions;
 	@ViewById(R.id.home_btn_partners)
 	NewInfoButton partners;
 	@ViewById(R.id.home_btn_members)
 	NewInfoButton members;
-	@ViewById(R.id.home_btn_news)
-	NewInfoButton news;
 	@ViewById(R.id.home_btn_about)
 	NewInfoButton about;
 	// The NewInfoProvider implementation
@@ -59,21 +55,15 @@ public class DashboardActivity extends FragmentActivity {
 		ab.setDisplayUseLogoEnabled(false);		
 
 		// Inject the NewInfoProvider: may be we can do injection with RoboGuice ?
-		schedule.setInfoProvider(infoProvider);
 		sessions.setInfoProvider(infoProvider);
 		partners.setInfoProvider(infoProvider);
 		members.setInfoProvider(infoProvider);
-		news.setInfoProvider(infoProvider);
 	}
 
-	//======  Click handlers for Dashboard buttons  ======
-	@Click(R.id.home_btn_schedule)
-	void scheduleClicked() {
-//		startActivity(new Intent(this, EventsActivity_.class));
-	}
 
 	@Click(R.id.home_btn_sessions)
 	void sessionsClicked() {
+//	startActivity(new Intent(this, EventsActivity_.class));
 	}
 
 	@Click(R.id.home_btn_partners)
@@ -84,10 +74,6 @@ public class DashboardActivity extends FragmentActivity {
 	@Click(R.id.home_btn_members)
 	void membersClicked() {
 		startActivity(new Intent(this, MembersActivity_.class));
-	}
-	
-	@Click(R.id.home_btn_news)
-	void newsClicked() {
 	}
 	
 	@Click(R.id.home_btn_about)
