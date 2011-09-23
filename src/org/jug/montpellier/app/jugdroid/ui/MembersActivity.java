@@ -20,7 +20,7 @@ import com.googlecode.androidannotations.annotations.ViewById;
 /**
  * Shows the members list
  * 
- * @author etaix
+ * @author Eric Taix
  */
 @EActivity(R.layout.activity_member)
 public class MembersActivity extends FragmentActivity implements ActionBar.TabListener{

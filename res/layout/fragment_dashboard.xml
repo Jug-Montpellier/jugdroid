@@ -8,7 +8,7 @@
 		android:layout_alignParentTop="true" android:id="@+id/buttonContainer"
 		android:layout_height="match_parent" android:padding="6dip"
 		android:layout_marginLeft="10dip" android:layout_marginRight="10dip"
-		android:layout_marginTop="10dip" android:layout_marginBottom="55dip">
+		android:layout_marginTop="10dip" android:layout_marginBottom="60dip">
 		<LinearLayout android:orientation="horizontal"
 			android:layout_gravity="center" android:layout_width="fill_parent"
 			android:layout_weight="1" android:layout_height="wrap_content">
@@ -49,30 +49,38 @@
 				android:id="@+id/handle" android:layout_width="fill_parent"
 				android:layout_height="match_parent" android:alpha="1">
 				<LinearLayout android:layout_width="match_parent"
-					android:background="@color/white" android:layout_marginTop="20dip"
-					android:layout_alignParentTop="true" android:id="@+id/news_border"
-					android:layout_height="2px" android:orientation="vertical"/>
+					android:background="@color/white" android:layout_alignParentTop="true" android:id="@+id/news_border"
+					android:orientation="vertical" android:layout_marginTop="20dip" android:layout_height="2dip"/>
 				<LinearLayout android:layout_width="match_parent"
-					android:background="@color/green" android:id="@+id/last_news"
-					android:layout_below="@+id/news_border" android:orientation="vertical" android:layout_height="45dip">
+					android:background="@color/green" android:orientation="vertical" android:layout_height="4dip" android:layout_below="@+id/news_border" android:layout_alignParentTop="false" android:id="@+id/green_margin"/>
+				<LinearLayout android:layout_width="match_parent"
+					android:background="@color/green" android:id="@+id/last_news_container"
+					android:orientation="vertical" android:layout_height="wrap_content" android:visibility="visible" android:layout_below="@+id/green_margin" android:paddingBottom="2dip">
 					<TextView android:layout_height="wrap_content"
-						android:layout_width="match_parent" android:ellipsize="marquee"
-						android:inputType="text" android:id="@+id/last_news"
-						android:layout_marginRight="10dip" android:textColor="@color/black_gray" android:layout_marginLeft="10dip"
-						android:text="This is a big text view which is longer then the maxim size of this textfield" android:textAppearance="@android:style/TextAppearance.Medium"></TextView>
-					<TextView android:layout_marginLeft="10dip" android:layout_width="match_parent" android:text="Il y a 5 minutes" android:textAppearance="@android:style/TextAppearance.Small" android:layout_height="wrap_content" android:ellipsize="marquee" android:layout_marginRight="10dip" android:inputType="text" android:id="@+id/last_date" android:textColor="@color/medium_gray"></TextView>
+						android:ellipsize="marquee" android:id="@+id/last_news"
+						android:textColor="@color/black_gray"
+						android:text="This is a big text view which is longer then the maxim size of this textfield"
+						android:textAppearance="@android:style/TextAppearance.Medium"
+						android:layout_width="fill_parent" android:singleLine="true" android:textStyle="bold" android:layout_marginLeft="14dip" android:layout_marginRight="14dip"></TextView>
+					<TextView android:layout_width="match_parent" android:text="Il y a 5 minutes"
+						android:textAppearance="@android:style/TextAppearance.Small"
+						android:layout_height="wrap_content" android:ellipsize="marquee"
+						android:inputType="text"
+						android:id="@+id/last_date" android:textColor="@color/white" android:layout_marginLeft="14dip" android:layout_marginRight="14dip"></TextView>
 				</LinearLayout>
 				<ImageView android:id="@+id/handle_image"
 					android:cropToPadding="false" android:layout_alignParentTop="false"
 					android:layout_alignParentBottom="false" android:layout_height="wrap_content"
 					android:layout_width="wrap_content" android:src="@drawable/news_handle"
-					android:layout_marginLeft="10dip" />
+					android:layout_marginLeft="10dip"/>
 			</RelativeLayout>
 			<LinearLayout android:layout_width="wrap_content"
 				android:layout_height="wrap_content" android:id="@+id/content"
 				android:orientation="vertical" android:background="@color/green"
-				android:padding="10dip">
-				<ListView android:layout_width="match_parent" android:layout_height="fill_parent" android:id="@+id/newsList" android:divider="@color/white" android:dividerHeight="2px"></ListView>
+				android:paddingLeft="10dip" android:paddingRight="10dip" android:paddingBottom="2dip">
+				<ListView android:layout_width="match_parent"
+					android:layout_height="fill_parent" android:divider="@color/white"
+					android:dividerHeight="2px" android:id="@+id/news_list"></ListView>
 			</LinearLayout>
 		</SlidingDrawer>
 	</FrameLayout>

@@ -26,6 +26,11 @@ public class RoundedImageView extends ImageView {
 		super(context, attrs);
 	}
 
+	public RoundedImageView(Context context, AttributeSet attrs, int defStyle) {
+		super(context, attrs, defStyle);
+	}
+
+
 	@Override
 	protected void onDraw(Canvas canvas) {
 		// super.onDraw(canvas);

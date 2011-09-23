@@ -10,4 +10,11 @@
     <string name="member_details">Fiche membre</string>       
     <string name="speakers">Speakers</string>    
     <string name="speaker_details">Fiche speaker</string>       
+    <string name="pref_category_notification">Notifications</string>       
+    <string name="pref_notification_allowed">Notifications Jugdroid</string>       
+    <string name="pref_notification_allowed_desc">Afficher les nouvelles notifications dans la barre d\'état</string>       
+    <string name="pref_vibrator_allowed">Vibreur</string>       
+    <string name="pref_vibrator_allowed_desc">Activer également le mode vibreur à la réception de nouvelles notifications</string>       
+    <string name="pref_ring">Sonnerie</string>       
+    <string name="pref_ring_desc">Choisir la sonnerie pour les nouvelles notifications</string>      
 </resources>

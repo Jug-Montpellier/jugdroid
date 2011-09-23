@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:jugdroid="http://schemas.android.com/apk/res/org.jug.montpellier.app.jugdroid"
+	android:layout_width="fill_parent" android:layout_height="wrap_content"
+	android:baselineAligned="true" android:orientation="horizontal"
+	android:padding="4dip" android:layout_marginBottom="2dip"
+	android:layout_marginTop="2dip" xmlns:android="http://schemas.android.com/apk/res/android">
+	<LinearLayout android:orientation="vertical"
+		android:layout_height="wrap_content" android:layout_width="wrap_content">
+		<TextView android:gravity="center_vertical|left"
+			android:layout_height="wrap_content" android:layout_width="fill_parent"
+			android:textSize="20dip" android:id="@+id/title"
+			android:text="Le prochain event aura lieu le 24 décembre"
+			android:inputType="text" android:textAppearance="@android:style/TextAppearance.Medium" android:textColor="@color/black_gray" android:textStyle="bold"/>
+		<TextView android:layout_height="wrap_content"
+			android:layout_width="fill_parent" android:gravity="center_vertical|left"
+			android:textAppearance="@android:style/TextAppearance.Small"
+			android:id="@+id/date"
+			android:text="Il y a 23 minutes" android:textColor="@color/white"></TextView>
+		<TextView android:layout_height="wrap_content"
+			android:layout_width="fill_parent" android:gravity="center_vertical|left"
+			android:id="@+id/content"
+			android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tortor mi, vestibulum eu volutpat et, placerat ac leo. Quisque felis quam, dignissim a commodo non, vehicula aliquam erat. Donec convallis fermentum mauris, sit amet fringilla lacus vehicula egestas. Cum sociis natoque penatibus et amet." android:textColor="@color/black_gray" android:textAppearance="@android:style/TextAppearance.Medium"></TextView>
+
+	</LinearLayout>
+
+</LinearLayout>

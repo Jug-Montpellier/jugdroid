@@ -129,7 +129,7 @@ public class MemberListFragment extends Fragment implements OnItemClickListener,
 	 */
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-		inflater.inflate(R.menu.main_menu, menu);
+		inflater.inflate(R.menu.refresh_menu, menu);
 		refreshItem = menu.findItem(R.id.menu_refresh);
 		super.onCreateOptionsMenu(menu, inflater);
 
