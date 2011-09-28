@@ -23,11 +23,12 @@ import com.googlecode.androidannotations.annotations.ViewById;
  * @author Eric Taix
  */
 @EActivity(R.layout.activity_member)
-public class MembersActivity extends FragmentActivity implements ActionBar.TabListener{
+public class MembersActivity extends FragmentActivity implements
+		ActionBar.TabListener {
 
 	@ViewById(R.id.members_list_frame)
 	View leftContainer;
-	
+
 	/**
 	 * Hack due to a Fragment API issue with AndroidAnnotations
 	 */
@@ -35,24 +36,20 @@ public class MembersActivity extends FragmentActivity implements ActionBar.TabLi
 	public void onBeforeCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 	}
-	
-	
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		final ActionBar ab = getSupportActionBar();
 		// Setup navigation mode to tabs
 		ab.setDisplayShowTitleEnabled(false);
 		ab.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-		create();
-	}
-	
-  private void create() {
+
 		MemberListFragment frag = new MemberListFragment();
-		// Execute a transaction, replacing any existing fragment with this one inside the frame.
-		getSupportFragmentManager().beginTransaction()
-		                    .replace(R.id.members_list_frame, frag)
-		                    .commit();
-  }
+		// Execute a transaction, replacing any existing fragment with this one
+		// inside the frame.
+		getSupportFragmentManager().beginTransaction().replace(
+				R.id.members_list_frame, frag).commit();
+	}
 
 	/**
 	 * The user has clicked on a new tab

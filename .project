@@ -32,6 +32,11 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>library_src</name>
+			<type>2</type>
+			<locationURI>_android_library_9e824bb/src</locationURI>
+		</link>
+		<link>
 			<name>sherlock_src</name>
 			<type>2</type>
 			<locationURI>_android_sherlock_da81eded/src</locationURI>

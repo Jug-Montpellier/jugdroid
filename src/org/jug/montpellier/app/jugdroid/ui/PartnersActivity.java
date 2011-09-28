@@ -4,6 +4,7 @@
 package org.jug.montpellier.app.jugdroid.ui;
 
 import org.jug.montpellier.app.jugdroid.R;
+import org.jug.montpellier.app.jugdroid.ui.fragment.PartnerListFragment;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -29,6 +30,11 @@ public class PartnersActivity extends FragmentActivity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		PartnerListFragment frag = new PartnerListFragment();
+		// Execute a transaction, replacing any existing fragment with this one
+		// inside the frame.
+		getSupportFragmentManager().beginTransaction().replace(
+				R.id.partners_list_frame, frag).commit();
 	}
 
 }

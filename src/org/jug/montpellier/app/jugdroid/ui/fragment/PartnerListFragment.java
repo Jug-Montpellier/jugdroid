@@ -15,6 +15,7 @@ import org.jug.montpellier.app.jugdroid.ui.adapter.PartnersLightAdapter;
 import org.jug.montpellier.app.jugdroid.ui.adapter.PartnersAdapter;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v4.app.Fragment;
@@ -60,6 +61,10 @@ public class PartnerListFragment extends Fragment implements OnItemClickListener
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		listView = new ListView(getActivity());
+		listView.setDivider(new ColorDrawable(getActivity().getResources().getColor(R.color.medium_gray)));
+		listView.setDividerHeight(1);
+		listView.setBackgroundColor(0);
+		listView.setCacheColorHint(0);
 		// Set up that this fragment has a menu (onCreateOptionsMenu will be called)
 		setHasOptionsMenu(true);
 		return listView;
